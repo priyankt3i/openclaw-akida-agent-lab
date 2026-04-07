@@ -1,0 +1,16 @@
+{
+  "seed": 7,
+  "shape": {
+    "batch": 2,
+    "tokens": 8,
+    "dim": 16
+  },
+  "threshold": 0.15,
+  "mse": 0.00014356268078280677,
+  "relative_l2_error": 0.029943797528364076,
+  "attention_mean_abs_delta": 0.003306078488015297,
+  "activation_sparsity": 0.142578125,
+  "dense_ops_proxy": 640,
+  "sparse_ops_proxy": 567,
+  "efficiency_gain_proxy": 1.128747795414462
+}

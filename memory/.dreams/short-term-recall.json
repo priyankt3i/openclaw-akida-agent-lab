@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "updatedAt": "2026-04-07T19:57:21.289Z",
+  "entries": {
+    "memory:memory/2026-04-07.md:1:8": {
+      "key": "memory:memory/2026-04-07.md:1:8",
+      "path": "memory/2026-04-07.md",
+      "startLine": 1,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "# 2026-04-07 - Met Priyank on WhatsApp. - Learned the user prefers to be called Priyank. - Identity established: name is Clawy. - Role established: research assistant and senior neuromorphic hardware and software engineer. - Priyank described themself as Clawy's boss.",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 9.99999000001e-7,
+      "maxScore": 9.99999000001e-7,
+      "firstRecalledAt": "2026-04-07T19:57:21.289Z",
+      "lastRecalledAt": "2026-04-07T19:57:21.289Z",
+      "queryHashes": [
+        "ead0b5ebc24d"
+      ],
+      "recallDays": [
+        "2026-04-07"
+      ],
+      "conceptTags": [
+        "met",
+        "priyank",
+        "whatsapp",
+        "learned",
+        "the",
+        "user",
+        "prefers",
+        "identity"
+      ]
+    }
+  }
+}
