@@ -25,6 +25,7 @@
 - Error/Root Cause: The here-doc based rewrite command introduced quoting/escaping artifacts while injecting backticks, which caused noisy shell output and poor markdown formatting.
 - Next Action: Clean the bootstrap script formatting, rerun bootstrap, and verify `OPENCLAW_CONTEXT.md` plus `MEMORY.md` render correctly.
 
+
 ## Persistent Context
 - Canonical context snapshot: `OPENCLAW_CONTEXT.md`
 - Source files synchronized on bootstrap: `HighLevelGoasl.md`, `chatHistory.txt`
