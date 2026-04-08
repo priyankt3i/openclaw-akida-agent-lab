@@ -1,0 +1,88 @@
+{
+  "last_updated": "2026-04-08 01:14:00 UTC",
+  "current_phase": "Akida-friendly surrogate conversion planning",
+  "currently_doing": "Preparing the next implementation step: a minimal tf_keras quantized gating surrogate built from Akida-supported primitives.",
+  "major_milestones": [
+    {
+      "name": "Workspace and measurement harness",
+      "status": "completed",
+      "marker": "1/6",
+      "summary": "Prototype workspace, baseline scripts, artifacts, and dashboard are in place."
+    },
+    {
+      "name": "Sparse surrogate discovery",
+      "status": "completed",
+      "marker": "2/6",
+      "summary": "Threshold-gated surrogate exceeded target in software with 7.53x proxy gain and 0.266% relative MSE."
+    },
+    {
+      "name": "Alternative mechanism comparison",
+      "status": "completed",
+      "marker": "3/6",
+      "summary": "Top-k, spike-proxy, Lava feasibility, Meta-TF feasibility, and prior-art scan are done."
+    },
+    {
+      "name": "Akida-friendly surrogate design",
+      "status": "in_progress",
+      "marker": "4/6",
+      "summary": "Need to express the winning behavior using supported tf_keras / Akida-compatible primitives."
+    },
+    {
+      "name": "Quantization and conversion validation",
+      "status": "pending",
+      "marker": "5/6",
+      "summary": "Run compatibility, quantization, and conversion checks on the surrogate."
+    },
+    {
+      "name": "Hardware purchase readiness decision",
+      "status": "pending",
+      "marker": "6/6",
+      "summary": "Decide on chip purchase only after the surrogate survives the real toolchain path."
+    }
+  ],
+  "pending_tasks": [
+    "Implement minimal tf_keras quantized gating surrogate",
+    "Check cnn2snn compatibility on the surrogate",
+    "Attempt quantization and Akida conversion",
+    "Validate threshold 0.20 behavior on a slightly larger setup",
+    "Compare against adaptive top-k or Q-K style sparse alternative"
+  ],
+  "active_subagents": [],
+  "completed_subagent_wave": [
+    {
+      "name": "threshold-sweep-1",
+      "status": "completed",
+      "summary": "Confirmed threshold 0.20 as a strong reproducible operating point."
+    },
+    {
+      "name": "threshold-sweep-2",
+      "status": "completed",
+      "summary": "Confirmed the same threshold frontier and quality-efficiency plateau."
+    },
+    {
+      "name": "topk-gating",
+      "status": "completed",
+      "summary": "Top-k improved fidelity but missed the 5x efficiency target at fixed k=2."
+    },
+    {
+      "name": "spike-proxy",
+      "status": "completed",
+      "summary": "Event-driven row refresh stayed under 1% loss but only reached about 2.67x gain."
+    },
+    {
+      "name": "metatf-feasibility",
+      "status": "completed",
+      "summary": "Direct MHA conversion looks blocked; Akida-friendly surrogate path is preferred."
+    },
+    {
+      "name": "lava-feasibility",
+      "status": "completed",
+      "summary": "Conceptually plausible but Lava is not installed locally."
+    }
+  ],
+  "next_if_spawned": [
+    "akida-gating-surrogate",
+    "larger-scale-threshold-validation",
+    "adaptive-topk-sweep"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "seed": 7,
+  "batch": 2,
+  "tokens": 8,
+  "dim": 16,
+  "threshold": {
+    "name": "threshold",
+    "kept_fraction": 0.140625,
+    "sparsity": 0.859375,
+    "energy_proxy": 0.140625,
+    "efficiency_gain_proxy": 7.111111111111111,
+    "mse": 0.00940565121573413,
+    "rel_mse": 0.0005401872214067399,
+    "rel_l2": 0.023241928091420356,
+    "attention_mae": 0.0031662448186131013,
+    "max_abs_err": 0.6245225426475614,
+    "out_mean": -0.08661528600646826,
+    "out_std": 4.199352174976701
+  },
+  "top_k": 2,
+  "dense": {
+    "out_mean": -0.07899698083669289,
+    "out_std": 4.172001354915702,
+    "attention_entropy": 0.12241468578724388
+  },
+  "topk": {
+    "name": "topk",
+    "kept_fraction": 0.25,
+    "sparsity": 0.75,
+    "energy_proxy": 0.25,
+    "efficiency_gain_proxy": 4.0,
+    "mse": 0.0005777813391079562,
+    "rel_mse": 3.318325217410599e-05,
+    "rel_l2": 0.0057604906192187215,
+    "attention_mae": 0.0006885115355233266,
+    "max_abs_err": 0.19462176534339148,
+    "out_mean": -0.07856528252039013,
+    "out_std": 4.175452243175674
+  },
+  "tradeoff": {
+    "topk_vs_threshold_rel_mse_ratio": 0.06142916910861225,
+    "topk_vs_threshold_efficiency_ratio": 0.5625,
+    "recommended": "threshold"
+  }
+}

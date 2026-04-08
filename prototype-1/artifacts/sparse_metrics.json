@@ -1,0 +1,17 @@
+{
+  "seed": 7,
+  "batch": 2,
+  "tokens": 8,
+  "dim": 16,
+  "threshold": 0.15,
+  "baseline_sparsity": 0.859375,
+  "kept_fraction": 0.140625,
+  "energy_proxy": 0.140625,
+  "mse": 0.00940565121573413,
+  "rel_mse": 0.0005401872214067399,
+  "max_abs_err": 0.6245225426475614,
+  "dense_out_mean": -0.07899698083669289,
+  "dense_out_std": 4.172001354915702,
+  "sparse_out_mean": -0.08661528600646826,
+  "sparse_out_std": 4.199352174976701
+}

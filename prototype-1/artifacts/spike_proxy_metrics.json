@@ -1,0 +1,44 @@
+{
+  "seed": 11,
+  "batch": 2,
+  "timesteps": 8,
+  "tokens": 8,
+  "dim": 16,
+  "decay": 0.75,
+  "searched_delta_thresholds": [
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5
+  ],
+  "searched_row_spike_thresholds": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "searched_topk": [
+    1,
+    2,
+    3
+  ],
+  "selected_delta_threshold": 0.1,
+  "selected_row_spike_threshold": 1,
+  "selected_topk": 3,
+  "mse": 0.0009313460040452902,
+  "rel_l2": 0.008089862374620973,
+  "quality_loss_pct": 0.8089862374620973,
+  "row_update_fraction": 1.0,
+  "attention_kept_fraction": 0.375,
+  "sparsity": 0.625,
+  "energy_gain_proxy": 2.6666666666666665,
+  "attention_mean_abs_delta": 0.004590538481947442,
+  "value_compute_proxy": 0.375,
+  "dense_score_std": 15.154670777671633,
+  "dense_weight_entropy": 0.2329897110377348,
+  "sweep_rows": 60,
+  "quality_target_met": true,
+  "trace_file": "prototype-1/artifacts/spike_proxy_traces.npz",
+  "sweep_file": "prototype-1/artifacts/spike_proxy_sweep.csv"
+}
