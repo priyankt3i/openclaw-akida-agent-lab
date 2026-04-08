@@ -1,0 +1,26 @@
+{
+  "seed": 13,
+  "quantize_path": {
+    "layers": [
+      "DepthwiseBufferTempConv",
+      "QuantizedReLU"
+    ],
+    "relu_bits": 4,
+    "convert": {
+      "error_type": "RuntimeError",
+      "message": "Invalid block found during conversion:\n DepthwiseBufferTempConv (dw_btc)\nQuantizedReLU (relu6)\nCompatible patterns that contain the faulty layers are:\n - QuantizedDense > QuantizedReLU\n - QuantizedFlatten > QuantizedDense > QuantizedReLU\n - QuantizedReshape > QuantizedDense > QuantizedReLU\n - QuantizedReshape > QuantizedFlatten > QuantizedDense > QuantizedReLU\n - QuantizedConv2D > QuantizedReLU\n - QuantizedConv2D > QuantizedMaxPool2D > QuantizedReLU\n - QuantizedConv2D > QuantizedReLU > QuantizedGlobalAveragePooling2D\n - QuantizedConv2DTranspose > QuantizedReLU\n - QuantizedDepthwiseConv2D > QuantizedReLU\n - QuantizedDepthwiseConv2D > QuantizedMaxPool2D > QuantizedReLU\n - QuantizedDepthwiseConv2DTranspose > QuantizedReLU\n - QuantizedBufferTempConv > QuantizedReLU\n - QuantizedDepthwiseBufferTempConv > QuantizedReLU\n - QuantizedStatefulProjection > QuantizedStatefulRecurrent > QuantizedExtractToken > QuantizedStatefulProjection > QuantizedReLU\n"
+    }
+  },
+  "explicit_path": {
+    "target_layers": [
+      "InputQuantizer",
+      "QuantizedDepthwiseBufferTempConv",
+      "QuantizedReLU"
+    ],
+    "relu_output_bits": 4,
+    "convert": {
+      "error_type": "ValueError",
+      "message": "Exception encountered when calling layer \"qdw_btc\" (type QuantizedDepthwiseBufferTempConv).\n\nin user code:\n\n    File \"/usr/local/lib/python3.11/site-packages/quantizeml/layers/layers_base.py\", line 222, in check_inputs  *\n        return call(self, inputs)\n    File \"/usr/local/lib/python3.11/site-packages/quantizeml/layers/layers_base.py\", line 181, in decorator  *\n        outputs = call(self, inputs)\n    File \"/usr/local/lib/python3.11/site-packages/quantizeml/layers/buffer_temp_conv.py\", line 304, in call  *\n        self._fifo_op(inputs)\n    File \"/usr/local/lib/python3.11/site-packages/quantizeml/layers/buffer_temp_conv.py\", line 91, in _fifo_op  *\n        self._init_fifo(new_sample)\n    File \"/usr/local/lib/python3.11/site-packages/quantizeml/layers/buffer_temp_conv.py\", line 64, in _init_fifo  *\n        init_value = tf.tile(tf.expand_dims(zeros, axis=-2), [1, 1, 1, self.kernel_size, 1])\n    File \"/usr/local/lib/python3.11/site-packages/quantizeml/tensors/tf_dispatch/reshaping.py\", line 480, in fp_tile\n        values = tf.tile(input.values, multiples, name)\n\n    ValueError: Shape must be rank 6 but is rank 5 for '{{node qdw_btc/Tile}} = Tile[T=DT_FLOAT, Tmultiples=DT_INT32](qdw_btc/IdentityN_1, qdw_btc/Tile/multiples)' with input shapes: [1,1,1,1,1,4], [5].\n\n\nCall arguments received by layer \"qdw_btc\" (type QuantizedDepthwiseBufferTempConv):\n  \u2022 inputs=FixedPoint(shape=TensorShape([1, 1, 1, 1, 4]), values=<tf.Tensor 'Placeholder:0' shape=(1, 1, 1, 1, 4) dtype=float32>, value_bits=7, frac_bits=<tf.Tensor 'Placeholder_1:0' shape=() dtype=float32>)"
+    }
+  }
+}

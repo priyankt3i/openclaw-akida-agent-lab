@@ -1,0 +1,81 @@
+{
+  "seed": 7,
+  "tokens": 8,
+  "dim": 16,
+  "batch": 8,
+  "dense_relu6_surrogate": {
+    "model_name": "dense_relu6_surrogate",
+    "layers": [
+      "Dense",
+      "ReLU",
+      "Dense",
+      "ReLU",
+      "Dense"
+    ],
+    "output_shape": [
+      8,
+      16
+    ],
+    "output_zero_fraction": 0.0,
+    "activation_sparsity": {
+      "gate_relu6": 0.490234375,
+      "post_relu6": 0.5078125
+    },
+    "compatibility": {
+      "int8": {
+        "status": "compatible"
+      },
+      "uint8": {
+        "status": "blocked",
+        "error_type": "RuntimeError",
+        "message": "Incompatibility found during conversion: Layers 'proj_in', 'gate_relu6': unsupported type [QuantizedDense, QuantizedReLU]: InputData sign incompatible with previous layer."
+      }
+    },
+    "quantized_layers": [
+      "QuantizedDense",
+      "QuantizedReLU",
+      "QuantizedDense",
+      "QuantizedReLU",
+      "QuantizedDense"
+    ],
+    "conversion": {
+      "status": "converted",
+      "akida_model": "akida.Model, layer_count=4, sequence_count=1, output_shape=[1, 1, 16]"
+    }
+  },
+  "conv_depthwise_probe": {
+    "model_name": "conv_depthwise_probe",
+    "layers": [
+      "Conv2D",
+      "DepthwiseConv2D",
+      "ReLU",
+      "Conv2D",
+      "ReLU",
+      "Conv2D"
+    ],
+    "activation_sparsity": {
+      "gate_relu6": 0.50244140625,
+      "post_relu6": 0.5574951171875
+    },
+    "compatibility": {
+      "status": "compatible"
+    },
+    "quantized_layers": [
+      "QuantizedConv2D",
+      "DepthwiseConv2D",
+      "QuantizedReLU",
+      "QuantizedConv2D",
+      "QuantizedReLU",
+      "QuantizedConv2D"
+    ],
+    "quantization": {
+      "status": "blocked_after_quantization",
+      "error_type": "RuntimeError",
+      "message": "Layer mix_dw3x3 of type DepthwiseConv2D is not supported for Akida conversion"
+    }
+  },
+  "summary": {
+    "proven_path": "A tf_keras Sequential Dense -> ReLU6 -> Dense -> ReLU6 -> Dense surrogate quantizes and converts with cnn2snn when checked with signed int8 input assumptions.",
+    "blocked_path": "A Conv2D + DepthwiseConv2D probe is not yet Akida-ready here because conversion rejects the depthwise kernel / input-sign combination and quantization leaves unserializable layers."
+  }
+}

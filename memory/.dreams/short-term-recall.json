@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-07T19:57:21.289Z",
+  "updatedAt": "2026-04-08T15:14:55.176Z",
   "entries": {
     "memory:memory/2026-04-07.md:1:8": {
       "key": "memory:memory/2026-04-07.md:1:8",
@@ -30,6 +30,217 @@
         "user",
         "prefers",
         "identity"
+      ]
+    },
+    "memory:memory/2026-04-08.md:1:5": {
+      "key": "memory:memory/2026-04-08.md:1:5",
+      "path": "memory/2026-04-08.md",
+      "startLine": 1,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "## 2026-04-08 02:20:00 UTC - Durable preference: The user wants more delegation wherever possible. Default to parallelizing work through specialized sub-agents when it improves throughput, focus, or turnaround. - Durable project guidance: Favor Akida toolchain survival over elegant-but-incompatible attention forms. Prefer supported primitive surrogates, run early `cnn2snn.check_model_compatibility(...)` checks, defend against TENN on global-memory/context retention rather than short-range recurrence, use context-decay diagnostics as investor-facing evidence, and postpone hardware purchase until a 2-bit surrogate clears conversion and simulated power gates. - Operating setup requested: Keep o",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "totalScore": 1.5286812912324796,
+      "maxScore": 0.7778348974462591,
+      "firstRecalledAt": "2026-04-08T02:50:01.454Z",
+      "lastRecalledAt": "2026-04-08T03:07:30.750Z",
+      "queryHashes": [
+        "c16fe3d94118",
+        "0f009a988873"
+      ],
+      "recallDays": [
+        "2026-04-08"
+      ],
+      "conceptTags": [
+        "sub-agents",
+        "elegant-but-incompatible",
+        "global-memory/context",
+        "short-range",
+        "context-decay",
+        "investor-facing",
+        "2-bit",
+        "utc"
+      ]
+    },
+    "memory:memory/2026-04-08.md:30:37": {
+      "key": "memory:memory/2026-04-08.md:30:37",
+      "path": "memory/2026-04-08.md",
+      "startLine": 30,
+      "endLine": 37,
+      "source": "memory",
+      "snippet": "- Durable project guidance: Favor Akida toolchain survival over elegant-but-incompatible attention forms. Prefer supported primitive surrogates, run early `cnn2snn.check_model_compatibility(...)` checks, defend against TENN on global-memory/context retention rather than short-range recurrence, use context-decay diagnostics as investor-facing evidence, and postpone hardware purchase until a 2-bit surrogate clears conversion and simulated power gates. - Operating setup requested: Keep one sub-agent focused on dashboard improvements and another focused on the core technical Akida objective. ## 2026-04-08 02:20:00 UTC - Durable preference: The user wants more delegation wherever possible. Defaul",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.5915307529887931,
+      "maxScore": 0.5915307529887931,
+      "firstRecalledAt": "2026-04-08T13:23:16.375Z",
+      "lastRecalledAt": "2026-04-08T13:23:16.375Z",
+      "queryHashes": [
+        "b882ad8f9cb7"
+      ],
+      "recallDays": [
+        "2026-04-08"
+      ],
+      "conceptTags": [
+        "elegant-but-incompatible",
+        "global-memory/context",
+        "short-range",
+        "context-decay",
+        "investor-facing",
+        "2-bit",
+        "sub-agent",
+        "durable"
+      ]
+    },
+    "memory:memory/2026-04-08.md:7:14": {
+      "key": "memory:memory/2026-04-08.md:7:14",
+      "path": "memory/2026-04-08.md",
+      "startLine": 7,
+      "endLine": 14,
+      "source": "memory",
+      "snippet": "- Durable project guidance: Favor Akida toolchain survival over elegant-but-incompatible attention forms. Prefer supported primitive surrogates, run early `cnn2snn.check_model_compatibility(...)` checks, defend against TENN on global-memory/context retention rather than short-range recurrence, use context-decay diagnostics as investor-facing evidence, and postpone hardware purchase until a 2-bit surrogate clears conversion and simulated power gates. - Operating setup requested: Keep one sub-agent focused on dashboard improvements and another focused on the core technical Akida objective. ## 2026-04-08 03:01:00 UTC - Durable preference: The user expects dashboard work to be genuinely delegat",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.676967489028155,
+      "maxScore": 0.676967489028155,
+      "firstRecalledAt": "2026-04-08T13:55:51.460Z",
+      "lastRecalledAt": "2026-04-08T13:55:51.460Z",
+      "queryHashes": [
+        "2986621aa5e5"
+      ],
+      "recallDays": [
+        "2026-04-08"
+      ],
+      "conceptTags": [
+        "elegant-but-incompatible",
+        "global-memory/context",
+        "short-range",
+        "context-decay",
+        "investor-facing",
+        "2-bit",
+        "sub-agent",
+        "durable"
+      ]
+    },
+    "memory:memory/2026-04-08.md:34:41": {
+      "key": "memory:memory/2026-04-08.md:34:41",
+      "path": "memory/2026-04-08.md",
+      "startLine": 34,
+      "endLine": 41,
+      "source": "memory",
+      "snippet": "- Durable project guidance: Favor Akida toolchain survival over elegant-but-incompatible attention forms. Prefer supported primitive surrogates, run early `cnn2snn.check_model_compatibility(...)` checks, defend against TENN on global-memory/context retention rather than short-range recurrence, use context-decay diagnostics as investor-facing evidence, and postpone hardware purchase until a 2-bit surrogate clears conversion and simulated power gates. - Operating setup requested: Keep one sub-agent focused on dashboard improvements and another focused on the core technical Akida objective. ## 2026-04-08 03:01:00 UTC - Durable preference: The user expects dashboard work to be genuinely delegat",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.676967489028155,
+      "maxScore": 0.676967489028155,
+      "firstRecalledAt": "2026-04-08T13:55:51.460Z",
+      "lastRecalledAt": "2026-04-08T13:55:51.460Z",
+      "queryHashes": [
+        "2986621aa5e5"
+      ],
+      "recallDays": [
+        "2026-04-08"
+      ],
+      "conceptTags": [
+        "elegant-but-incompatible",
+        "global-memory/context",
+        "short-range",
+        "context-decay",
+        "investor-facing",
+        "2-bit",
+        "sub-agent",
+        "durable"
+      ]
+    },
+    "memory:memory/2026-04-08.md:16:26": {
+      "key": "memory:memory/2026-04-08.md:16:26",
+      "path": "memory/2026-04-08.md",
+      "startLine": 16,
+      "endLine": 26,
+      "source": "memory",
+      "snippet": "- Operating setup requested: Keep one sub-agent focused on dashboard improvements and another focused on the core technical Akida objective. ## 2026-04-08 02:20:00 UTC - Durable preference: The user wants more delegation wherever possible. Default to parallelizing work through specialized sub-agents when it improves throughput, focus, or turnaround. - Durable project guidance: Favor Akida toolchain survival over elegant-but-incompatible attention forms. Prefer supported primitive surrogates, run early `cnn2snn.check_model_compatibility(...)` checks, defend against TENN on global-memory/context retention rather than short-range recurrence, use context-decay diagnostics as investor-facing evid",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.6656269481306049,
+      "maxScore": 0.6656269481306049,
+      "firstRecalledAt": "2026-04-08T13:55:51.460Z",
+      "lastRecalledAt": "2026-04-08T13:55:51.460Z",
+      "queryHashes": [
+        "2986621aa5e5"
+      ],
+      "recallDays": [
+        "2026-04-08"
+      ],
+      "conceptTags": [
+        "sub-agent",
+        "sub-agents",
+        "elegant-but-incompatible",
+        "global-memory/context",
+        "short-range",
+        "context-decay",
+        "investor-facing",
+        "operating"
+      ]
+    },
+    "memory:memory/2026-04-08.md:43:53": {
+      "key": "memory:memory/2026-04-08.md:43:53",
+      "path": "memory/2026-04-08.md",
+      "startLine": 43,
+      "endLine": 53,
+      "source": "memory",
+      "snippet": "- Operating setup requested: Keep one sub-agent focused on dashboard improvements and another focused on the core technical Akida objective. ## 2026-04-08 02:20:00 UTC - Durable preference: The user wants more delegation wherever possible. Default to parallelizing work through specialized sub-agents when it improves throughput, focus, or turnaround. - Durable project guidance: Favor Akida toolchain survival over elegant-but-incompatible attention forms. Prefer supported primitive surrogates, run early `cnn2snn.check_model_compatibility(...)` checks, defend against TENN on global-memory/context retention rather than short-range recurrence, use context-decay diagnostics as investor-facing evid",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.6656269481306049,
+      "maxScore": 0.6656269481306049,
+      "firstRecalledAt": "2026-04-08T13:55:51.460Z",
+      "lastRecalledAt": "2026-04-08T13:55:51.460Z",
+      "queryHashes": [
+        "2986621aa5e5"
+      ],
+      "recallDays": [
+        "2026-04-08"
+      ],
+      "conceptTags": [
+        "sub-agent",
+        "sub-agents",
+        "elegant-but-incompatible",
+        "global-memory/context",
+        "short-range",
+        "context-decay",
+        "investor-facing",
+        "operating"
+      ]
+    },
+    "memory:memory/2026-04-08.md:51:58": {
+      "key": "memory:memory/2026-04-08.md:51:58",
+      "path": "memory/2026-04-08.md",
+      "startLine": 51,
+      "endLine": 58,
+      "source": "memory",
+      "snippet": "- Environment note: The user is sensitive to stale gateway/process clutter and forwarded ports. When ports appear, verify and explain concretely. Current confirmed listeners were one `openclaw-gateway` stack on `18789` (main gateway), `18791` (browser-control service), and `36309` (local browser CDP/debug), rather than three separate agent instances. ## 2026-04-08 03:06:00 UTC - Environment note: `prototype-1/dashboard.py` is currently a standalone manual process, not a supervised service. If its parent session ends, it will stop and will not auto-restart. When the user asks whether the dashboard is running, verify the live process/listener state rather than assuming the file being present",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.7233650885184957,
+      "maxScore": 0.7233650885184957,
+      "firstRecalledAt": "2026-04-08T15:14:55.176Z",
+      "lastRecalledAt": "2026-04-08T15:14:55.176Z",
+      "queryHashes": [
+        "c58bed43910a"
+      ],
+      "recallDays": [
+        "2026-04-08"
+      ],
+      "conceptTags": [
+        "gateway",
+        "gateway/process",
+        "openclaw-gateway",
+        "browser-control",
+        "cdp/debug",
+        "prototype-1/dashboard.py",
+        "auto-restart",
+        "process/listener"
       ]
     }
   }

@@ -119,6 +119,38 @@
 - Error/Root Cause: Brave web search was unavailable due to missing API key, so the scan relied on arXiv, GitHub, and directly fetched public pages rather than broad search-engine coverage.
 - Next Action: Keep pushing the Akida-friendly surrogate path and position the work around deployment realism, conversion feasibility, and reproducible efficiency-quality tradeoffs rather than claiming generic spiking-transformer novelty.
 
+## 2026-04-08 01:27:00 UTC
+- Experiment ID: DASHBOARD-UX-002
+- Hypothesis: A stakeholder-friendly dashboard with milestone progress, clearer categorization, and explicit pending-task visibility will make project status understandable at a glance without digging through raw artifacts.
+- Command(s): Rewrote `prototype-1/dashboard.py`, updated `prototype-1/artifacts/coordination_status.json`, restarted the local dashboard, and verified the new sections with `curl`.
+- Result: Success. Dashboard now includes a progress bar, executive mission state, major milestones, pending tasks, agent coordination, categorized artifacts, code inventory, and recent logs from `MEMORY.md`.
+- Error/Root Cause: None
+- Next Action: Keep the coordination snapshot updated whenever sub-agents are spawned or the project phase changes so the dashboard remains trustworthy.
+
+## 2026-04-08 01:52:00 UTC
+- Experiment ID: STAKEHOLDER-DOCS-002
+- Hypothesis: A tighter stakeholder documentation package, including an investor one-pager, a cleaner PDF-style brief, and a founder deck outline, will make the current project state easier to communicate without overstating what is proven.
+- Command(s): Wrote `prototype-1/artifacts/investor_one_pager_2026-04-08.md`, `prototype-1/artifacts/investor_brief_pdf_style_2026-04-08.md`, and `prototype-1/artifacts/founder_narrative_deck_outline_2026-04-08.md`.
+- Result: Success. Three additional stakeholder-facing documents now exist alongside the experiment report, investor pitch brief, and prior-art summary.
+- Error/Root Cause: None
+- Next Action: If needed, convert the strongest of these into a final outward-facing narrative once the Akida-compatible surrogate path is validated further.
+
+## 2026-04-08 02:06:00 UTC
+- Experiment ID: DASHBOARD-LIVE-ANIM-001
+- Hypothesis: Lightweight live animation cues, such as pulses, shimmer on progress, and active-status emphasis, will make stakeholder-facing dashboard activity more legible without turning the interface into noise.
+- Command(s): Edited `prototype-1/dashboard.py`, restarted the dashboard server, and verified the live status strings via `curl` on port `8765`.
+- Result: Success. Dashboard now auto-refreshes every 5 seconds and visually highlights the current mission state, overall progress, and active agent sections with lightweight animation.
+- Error/Root Cause: First restart failed because CSS keyframes were inserted into an f-string without escaped braces; fixed by doubling CSS braces and restarting successfully.
+- Next Action: When sub-agents are active again, keep the coordination snapshot current so the new live animation cues reflect real agent state rather than only ambient dashboard motion.
+
+## 2026-04-08 02:39:00 UTC
+- Experiment ID: DASHBOARD-PROGRESS-TRUTH-001
+- Hypothesis: Splitting coarse milestone progress from current-phase progress, while surfacing recent pivots and cleanup backlog, will make the dashboard more truthful and less misleading when the overall percentage does not move.
+- Command(s): Updated `prototype-1/artifacts/coordination_status.json`, edited `prototype-1/dashboard.py`, restarted the dashboard, and verified the new sections with `curl`.
+- Result: Success. Dashboard now shows both overall milestone progress and current-phase progress, plus recent pivots and cleanup backlog.
+- Error/Root Cause: None
+- Next Action: Keep phase-progress values updated during active repair loops so stakeholders can see movement even when the top-level milestone count stays constant.
+
 ## 2026-04-07 21:09:00 UTC
 - Experiment ID: LAVA-FEASIBILITY-001
 - Hypothesis: The current sparse attention surrogate can be mapped into Lava-style process components if Lava docs are reachable and the local environment can supply the required packages.
@@ -150,3 +182,75 @@
 - Result: Success. Wrote `prototype-1/artifacts/threshold_sweep_results.json`. Best quality-constrained frontier point was fixed threshold `0.20` with kept fraction `0.1328125`, sparsity `0.8671875`, gain proxy `7.5294x`, relative MSE `0.0026608`, relative L2 `0.05158`, and no fallback rows. The most aggressive tested point was threshold `0.50`, which reached `8.0x` gain proxy but degraded to relative MSE `0.02043`, exceeding the 1% quality-loss target.
 - Error/Root Cause: No runtime failure. Many thresholds/schedules collapsed to the same operating point because the deterministic softmax rows are already highly peaked, so crossing several nearby thresholds leaves the same top-1 or top-2 entries active.
 - Next Action: Move from scalar thresholding to top-k or learned gating so the next sweep explores genuinely different sparsity patterns instead of repeated plateaus.
+
+## 2026-04-08 02:21:00 UTC
+- Experiment ID: AKIDA-SURROGATE-PROBE-001
+- Hypothesis: A minimal `tf_keras` surrogate that removes softmax and LayerNorm, uses ReLU6 gating, and sticks to Akida-friendlier primitives can validate at least one real `cnn2snn` quantization/conversion path, while exposing which spatial/depthwise variants still fail.
+- Command(s): `python prototype-1/experiments/akida_surrogate_probe.py`
+- Result: Partial success. Wrote `prototype-1/artifacts/akida_surrogate_probe.json` and `prototype-1/artifacts/akida_surrogate_probe_summary_2026-04-08.md`. A signed-input dense surrogate (`Dense -> ReLU6 -> Dense -> ReLU6 -> Dense`) passed `check_model_compatibility(..., input_dtype='int8')`, quantized to `QuantizedDense/QuantizedReLU` layers, and converted successfully to `akida.Model, layer_count=4, sequence_count=1, output_shape=[1, 1, 16]`. Measured gate sparsity on deterministic synthetic input was about `49.0%` after the first ReLU6 and `50.8%` after the second. A small `Conv2D + DepthwiseConv2D + ReLU6 + Conv2D` probe showed similar internal sparsity and passed the lightweight compatibility check, but failed the real post-quantization conversion step.
+- Error/Root Cause: The dense path is blocked for `uint8` because `cnn2snn` reports `InputData sign incompatible with previous layer`, so the currently proven route assumes signed `int8` inputs. The depthwise probe is not yet deployable because `cnn2snn.convert(...)` fails with `Layer mix_dw3x3 of type DepthwiseConv2D is not supported for Akida conversion` even though quantization itself completes.
+- Next Action: Keep the proven Dense/ReLU6 surrogate as the current Akida bridge, then try replacing the unsupported depthwise mixer with stacks of supported pointwise/dense token-mixing blocks or alternate spatial factorizations that preserve sparsity without reintroducing softmax/LayerNorm.
+
+## 2026-04-08 02:11:00 UTC
+- Experiment ID: CONTEXT-DRIFT-DIAGNOSTIC-001
+- Hypothesis: The current fixed-threshold sparse surrogate (`threshold=0.20`) may keep its error roughly flat across token positions on a larger GPT-2-style causal single-block proxy, or it may reveal position-dependent drift hidden by the earlier tiny 8-token setup.
+- Command(s): `python prototype-1/experiments/context_drift_diagnostic.py`
+- Result: Success. Wrote `prototype-1/artifacts/context_drift_metrics.json`, `prototype-1/artifacts/context_drift_per_token.csv`, `prototype-1/artifacts/context_drift_attention_delta_heatmap.csv`, and `prototype-1/artifacts/context_drift_arrays.npz`. On a 32-token causal single-block proxy, the sparse threshold surrogate kept fraction was `0.052734375` (about `18.96x` gain proxy, `94.73%` sparsity), but quality degraded sharply with context: global relative MSE `0.41517`, per-token relative MSE slope `0.03277`, early-quarter mean relative MSE `0.05333`, late-quarter mean relative MSE `0.86091`, and late/early ratio `16.14`. The diagnostic classified the trend as `grows_with_context`, not flat or decaying.
+- Error/Root Cause: No runtime failure. The scalar threshold that looked acceptable on the earlier tiny deterministic setup becomes too aggressive in a causal 32-token block, where later positions depend on a larger history and the mask collapses too many low-but-still-useful attention links.
+- Next Action: Repeat the diagnostic with denser thresholds or top-k/adaptive gating, then compare whether the context-error slope flattens while still preserving a meaningful sparsity advantage.
+
+## 2026-04-08 15:31:00 UTC
+- Experiment ID: CONVERSION-GATE-QDEPTHWISEBUFFERTEMPCONV-001
+- Hypothesis: The smallest possible model that explicitly targets the admitted converter block `QuantizedDepthwiseBufferTempConv > QuantizedReLU` with 4-bit ReLU output might be constructible either by `cnn2snn.quantize(...)` from a float `DepthwiseBufferTempConv -> ReLU6` model or by direct `QuantizedDepthwiseBufferTempConv -> QuantizedReLU` layer assembly.
+- Command(s): `python prototype-1/experiments/conversion_gate_qdepthwisebuffer_tempconv_exact.py`
+- Result: Failed to prove a convertible path. Artifact written to `prototype-1/artifacts/conversion_gate_qdepthwisebuffer_tempconv_exact.json`.
+- Error/Root Cause: The high-level quantize path keeps the block as `DepthwiseBufferTempConv -> QuantizedReLU` with 4-bit ReLU output, and `cnn2snn.convert(...)` rejects it with `Invalid block found during conversion` while listing `QuantizedDepthwiseBufferTempConv > QuantizedReLU` as the admitted pattern. The explicit quantized-layer path also fails before conversion, with `QuantizedDepthwiseBufferTempConv` raising `ValueError: Shape must be rank 6 but is rank 5` inside `_init_fifo` / `tf.tile`, so the admitted pattern is not reachable from the current high-level construction path tested here.
+- Next Action: Treat this depthwise temporal pattern as currently blocked in the present toolchain and pivot to a different admitted Akida path unless BrainChip/QuantizeML exposes a working constructor or example for `QuantizedDepthwiseBufferTempConv`.
+
+## 2026-04-08 02:20:00 UTC
+- Experiment ID: WORKSTYLE-DELEGATION-001
+- Hypothesis: Treating "delegate more wherever possible" as a standing operating preference will improve throughput by keeping specialized sub-agents active on parallelizable work.
+- Command(s): Updated durable memory and spawned dedicated sub-agents for dashboard and technical workstreams.
+- Result: Standing preference recorded. Default operating mode is now to delegate parallelizable work when it improves speed or focus.
+- Error/Root Cause: None
+- Next Action: Keep one dashboard-focused sub-agent available for UI/dashboard improvements on request, and route core neuromorphic/Akida experiments to a separate technical sub-agent when parallel execution helps.
+
+## 2026-04-08 02:20:00 UTC
+- Experiment ID: PROJECT-GUIDANCE-001
+- Hypothesis: Distilling the latest strategic feedback into durable guidance will keep future work aligned with Akida toolchain reality and the strongest product narrative.
+- Command(s): Summarized user feedback into durable project guidance.
+- Result: Recorded guidance to prioritize Akida-compatible surrogates built from supported primitives, use early `cnn2snn.check_model_compatibility(...)` checks, frame the moat against TENN around long-range/global-memory retention rather than local sequence efficiency, use context-drift/decay diagnostics as investor-facing proof, and delay hardware purchase until a 2-bit surrogate passes conversion and simulated power targets.
+- Error/Root Cause: None
+- Next Action: Use this guidance to prioritize technical experiments and stakeholder artifacts going forward.
+
+## 2026-04-08 04:48:00 UTC
+- Experiment ID: HISTORY-BUFFER-SURROGATE-PROBE-001
+- Hypothesis: Expanding the proven signed-int8 Dense/ReLU6 Akida bridge with a small causal history buffer can reduce long-context error while still surviving `cnn2snn` compatibility, quantization, and conversion.
+- Command(s): `python prototype-1/experiments/history_buffer_surrogate_probe.py`
+- Result: Success. Wrote `prototype-1/artifacts/history_buffer_surrogate_probe.json`, `prototype-1/artifacts/history_buffer_surrogate_per_token.csv`, and `prototype-1/artifacts/history_buffer_surrogate_arrays.npz`. On a deterministic 32-token probe, a 4-token history buffer reduced global relative MSE from `0.86795` (current-only path) to `0.45758` and reduced late-quarter mean relative MSE by about `38.64%` while preserving the Akida-friendly Dense/ReLU6 structure. The repaired path still showed context growth (`late_to_early_ratio=2.33`), but it passed `check_model_compatibility(..., input_dtype='int8')`, quantized to `QuantizedDense/QuantizedReLU` layers, and converted successfully to `akida.Model, layer_count=4, sequence_count=1, output_shape=[1, 1, 16]`.
+- Error/Root Cause: No runtime failure. The first history buffer materially improves quality but does not eliminate late-context drift, so the current repair is only partial rather than sufficient for the final moat claim.
+- Next Action: Sweep deeper history windows or alternate temporal mixing while keeping the signed-int8 Dense/ReLU6 path intact, then rerun drift plus conversion checks to see whether the error slope can be flattened further without losing toolchain viability.
+
+## 2026-04-08 05:08:00 UTC
+- Experiment ID: HISTORY-BUFFER-CONTEXT-SWEEP-001
+- Hypothesis: The repaired signed-int8 Dense/ReLU6 history-buffer surrogate may still fail sharply at 64-256 tokens, revealing variance/entropy collapse that would force an immediate pivot away from the history-buffer path.
+- Command(s): `python prototype-1/experiments/history_buffer_activation_audit.py` and `python prototype-1/experiments/history_buffer_context_sweep.py`
+- Result: Mixed but better-than-feared. Wrote `prototype-1/artifacts/history_buffer_activation_audit.json`, `prototype-1/artifacts/history_buffer_context_sweep.json`, and `prototype-1/artifacts/history_buffer_context_sweep.csv`. The repaired path did not show catastrophic activation collapse: `gate_relu6` saturation stayed around `23%`, `post_relu6` saturation around `4-10%`, and post-gate variance/entropy stayed within roughly `0.96-1.01x` and `0.98-0.99x` from early to late context. On the longer sweep, the repaired path remained stable enough to classify as `holding` at 64, 128, and 256 tokens. Key repaired metrics were: 64 tokens `global_rel_mse=0.28298`, `late/early=1.3699`; 128 tokens `global_rel_mse=0.30396`, `late/early=1.0801`; 256 tokens `global_rel_mse=0.31306`, `late/early=1.0632`. This is far better than the feared >3.0 drift gate and materially better than the current-only path at each context length.
+- Error/Root Cause: No runtime failure. The remaining issue is not catastrophic collapse but persistent non-zero error floor around `0.28-0.31` relative MSE, which is still too high for a final quality claim even though the long-context drift ratio is now much healthier.
+- Next Action: Use the repaired history-buffer path as a still-viable baseline, then spend the next iteration reducing the absolute error floor, for example via one bounded scaling/normalization retry or a more Akida-native temporal mixer, while preserving the int8 compatibility and conversion path.
+
+## 2026-04-08 14:01:00 UTC
+- Experiment ID: HISTORY-BUFFER-OFFSET-PUSH-001
+- Hypothesis: A centered signed-to-unsigned offset push (`clip(round(x + 7), 0, 15)`) may restore lost negative-history information at the Akida input boundary and materially reduce the repaired path error.
+- Command(s): `python prototype-1/experiments/history_buffer_offset_push_probe.py`
+- Result: Failed as a rescue. Wrote `prototype-1/artifacts/history_buffer_offset_push_probe.json`. On a 64-token smoke test, the offset-push mapping only improved Akida-vs-qmodel relative MSE from `0.81516` to `0.80004` (about `1.85%` better), far below the threshold for saving the manual history-buffer path.
+- Error/Root Cause: The signed-input corruption is not fixed by a simple midpoint shift. Negative history is not merely offset-misaligned; the Akida boundary appears to rectify or alias parts of the signed signal, so the manual buffer remains fundamentally mismatched to the hardware input contract.
+- Next Action: Stop spending rescue attempts on the manual history-buffer input packing. Treat the branch as effectively exhausted for product use and pivot the next technical cycle toward a more Akida-native temporal mixer / TENN-like path.
+
+## 2026-04-08 15:32:00 UTC
+- Experiment ID: PROTOTYPE-1-DEPTHWISE-BUFFER-SIGNED-IMPULSE-001
+- Hypothesis: A minimal 1-channel `DepthwiseBufferTempConv` with signed int8 quantization can be converted to Akida and will preserve a negative impulse as a negative temporal response instead of collapsing it to zero or aliasing it as positive.
+- Command(s): `python prototype-1/experiments/signed_impulse_depthwise_buffer_tempconv_min.py`
+- Result: Success. Minimal path converted with quantized layers `InputQuantizer -> QuantizedDepthwiseBufferTempConv -> Dequantizer`. For input sequence `[-5, 0, 0, 0]` and kernel `[1, 1, 1]`, float output was `[-5, -5, -5, 0]`, quantized tf output was `[-4, -4, -4, 0]`, and Akida output was `[-0.15625, -0.15625, -0.15625, 0]`.
+- Error/Root Cause: Earlier attempts failed because the `cnn2snn.quantize(...)` wrapper did not expose TENN calibration controls, leaving the layer unquantized as raw `DepthwiseBufferTempConv`, so conversion rejected the block. Using `quantizeml.models.quantize.quantize(...)` with `QuantizationParams(input_dtype='int8', ...)`, explicit calibration samples, and `batch_size=1` produced `QuantizedDepthwiseBufferTempConv` and fixed conversion.
+- Next Action: Treat signed inhibitory behavior on the Akida-native temporal path as validated at the minimal gate level, then test whether the same signed preservation survives in a larger attention-surrogate composition without reintroducing unsupported layers.

@@ -1,7 +1,23 @@
 {
-  "last_updated": "2026-04-08 01:14:00 UTC",
-  "current_phase": "Akida-friendly surrogate conversion planning",
-  "currently_doing": "Preparing the next implementation step: a minimal tf_keras quantized gating surrogate built from Akida-supported primitives.",
+  "last_updated": "2026-04-08 14:18:00 UTC",
+  "execution_state": "in_progress",
+  "current_phase": "Akida-native temporal pivot",
+  "currently_doing": "Manual history-buffer rescue is no longer a product path after the offset-push fix failed, so the work has pivoted to an Akida-native temporal design search.",
+  "phase_progress_pct": 72,
+  "phase_note": "The dashboard now tracks the temporal-conv/TENN-like pivot instead of further manual-buffer rescue.",
+  "recent_pivots": [
+    "The manual history-buffer path is effectively dead for product use after the offset-push rescue failed",
+    "The project has pivoted from manual buffer repair to an Akida-native temporal path",
+    "DepthwiseBufferTempConv is the clearest Akida-native clue found so far",
+    "Next work should center on a temporal-conv or TENN-like bridge, not more manual-buffer rescue"
+  ],
+  "cleanup_backlog": [
+    "Consolidate obsolete or superseded experiment claims in pitch materials after the next engineering result",
+    "Archive stale coordination snapshots and keep only the current truth in coordination_status.json",
+    "Mark which artifact results are toy-setup only versus toolchain-valid",
+    "Add direct links from the dashboard to the key reports and diagnostics",
+    "Prune or label weaker branches so stakeholders can distinguish active path from dead ends"
+  ],
   "major_milestones": [
     {
       "name": "Workspace and measurement harness",
@@ -19,70 +35,62 @@
       "name": "Alternative mechanism comparison",
       "status": "completed",
       "marker": "3/6",
-      "summary": "Top-k, spike-proxy, Lava feasibility, Meta-TF feasibility, and prior-art scan are done."
+      "summary": "Top-k, spike-proxy, Lava feasibility, Meta-TF feasibility, prior-art scan, and moat diagnostics are done."
     },
     {
       "name": "Akida-friendly surrogate design",
-      "status": "in_progress",
+      "status": "completed",
       "marker": "4/6",
-      "summary": "Need to express the winning behavior using supported tf_keras / Akida-compatible primitives."
+      "summary": "The manual history-buffer branch produced useful evidence but is no longer the product direction."
     },
     {
       "name": "Quantization and conversion validation",
-      "status": "pending",
+      "status": "in_progress",
       "marker": "5/6",
-      "summary": "Run compatibility, quantization, and conversion checks on the surrogate."
+      "summary": "Validation focus has shifted to an Akida-native temporal-conv/TENN-like bridge, with DepthwiseBufferTempConv as the main clue."
     },
     {
       "name": "Hardware purchase readiness decision",
       "status": "pending",
       "marker": "6/6",
-      "summary": "Decide on chip purchase only after the surrogate survives the real toolchain path."
+      "summary": "Decide on chip purchase only after the new Akida-native temporal path survives the real toolchain path and context behavior is acceptable."
     }
   ],
   "pending_tasks": [
-    "Implement minimal tf_keras quantized gating surrogate",
-    "Check cnn2snn compatibility on the surrogate",
-    "Attempt quantization and Akida conversion",
-    "Validate threshold 0.20 behavior on a slightly larger setup",
-    "Compare against adaptive top-k or Q-K style sparse alternative"
+    "Translate the DepthwiseBufferTempConv clue into a concrete Akida-native temporal-conv surrogate design",
+    "Prototype a TENN-like temporal bridge instead of further manual history-buffer rescue",
+    "Retest cnn2snn compatibility and Akida conversion on the new temporal path",
+    "Measure token-position error curves on the temporal-conv pivot",
+    "Keep softmax and LayerNorm out of the hardware-valid bridge",
+    "Reframe the moat around quantization/conversion survival plus native temporal context handling"
   ],
   "active_subagents": [],
   "completed_subagent_wave": [
+    {
+      "name": "akida-quantization-bridge",
+      "status": "completed",
+      "summary": "Signed-int8 Dense -> ReLU6 -> Dense -> ReLU6 -> Dense quantized and converted successfully; uint8 failed on input sign incompatibility."
+    },
+    {
+      "name": "context-decay-curve",
+      "status": "completed",
+      "summary": "Current threshold surrogate error grows strongly with context on a GPT-2-style causal proxy; long-context moat not yet proven."
+    },
     {
       "name": "threshold-sweep-1",
       "status": "completed",
       "summary": "Confirmed threshold 0.20 as a strong reproducible operating point."
     },
     {
-      "name": "threshold-sweep-2",
-      "status": "completed",
-      "summary": "Confirmed the same threshold frontier and quality-efficiency plateau."
-    },
-    {
       "name": "topk-gating",
       "status": "completed",
       "summary": "Top-k improved fidelity but missed the 5x efficiency target at fixed k=2."
-    },
-    {
-      "name": "spike-proxy",
-      "status": "completed",
-      "summary": "Event-driven row refresh stayed under 1% loss but only reached about 2.67x gain."
-    },
-    {
-      "name": "metatf-feasibility",
-      "status": "completed",
-      "summary": "Direct MHA conversion looks blocked; Akida-friendly surrogate path is preferred."
-    },
-    {
-      "name": "lava-feasibility",
-      "status": "completed",
-      "summary": "Conceptually plausible but Lava is not installed locally."
     }
   ],
   "next_if_spawned": [
-    "akida-gating-surrogate",
-    "larger-scale-threshold-validation",
-    "adaptive-topk-sweep"
+    "depthwise-buffer-temp-conv-prototype",
+    "temporal-conv-tenn-bridge",
+    "quantization-sweep",
+    "gpt2-style-error-analysis"
   ]
 }

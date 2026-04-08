@@ -1,0 +1,441 @@
+{
+  "proj_in_weight_range": {
+    "min": -127,
+    "max": 127
+  },
+  "negative_best_uint_matches": {
+    "-8.0": 4,
+    "-4.0": 4,
+    "-2.0": 0,
+    "-1.0": 0,
+    "-0.5": 0
+  },
+  "positive_best_uint_matches": {
+    "0.0": 0,
+    "0.5": 0,
+    "1.0": 0,
+    "2.0": 2,
+    "4.0": 4,
+    "8.0": 8
+  },
+  "match_table": {
+    "-8.0": [
+      {
+        "uint_value": 4,
+        "rel_mse": 0.6358836889266968,
+        "mean_output": -0.05212482810020447,
+        "nonzero_fraction": 1.0
+      },
+      {
+        "uint_value": 6,
+        "rel_mse": 0.7374790906906128,
+        "mean_output": -0.07001912593841553,
+        "nonzero_fraction": 1.0
+      },
+      {
+        "uint_value": 3,
+        "rel_mse": 0.8455793261528015,
+        "mean_output": 0.02949673682451248,
+        "nonzero_fraction": 0.9375
+      },
+      {
+        "uint_value": 5,
+        "rel_mse": 0.8468874096870422,
+        "mean_output": 0.02995789796113968,
+        "nonzero_fraction": 0.9375
+      },
+      {
+        "uint_value": 2,
+        "rel_mse": 0.9428600668907166,
+        "mean_output": 0.005021344870328903,
+        "nonzero_fraction": 0.875
+      },
+      {
+        "uint_value": 0,
+        "rel_mse": 1.0,
+        "mean_output": 0.0,
+        "nonzero_fraction": 0.0
+      }
+    ],
+    "-4.0": [
+      {
+        "uint_value": 4,
+        "rel_mse": 0.9951657056808472,
+        "mean_output": -0.05212482810020447,
+        "nonzero_fraction": 1.0
+      },
+      {
+        "uint_value": 0,
+        "rel_mse": 1.0,
+        "mean_output": 0.0,
+        "nonzero_fraction": 0.0
+      },
+      {
+        "uint_value": 1,
+        "rel_mse": 1.0,
+        "mean_output": 0.0,
+        "nonzero_fraction": 0.0
+      },
+      {
+        "uint_value": 3,
+        "rel_mse": 1.0766404867172241,
+        "mean_output": 0.02949673682451248,
+        "nonzero_fraction": 0.9375
+      },
+      {
+        "uint_value": 2,
+        "rel_mse": 1.1405515670776367,
+        "mean_output": 0.005021344870328903,
+        "nonzero_fraction": 0.875
+      },
+      {
+        "uint_value": 5,
+        "rel_mse": 1.5329761505126953,
+        "mean_output": 0.02995789796113968,
+        "nonzero_fraction": 0.9375
+      }
+    ],
+    "-2.0": [
+      {
+        "uint_value": 0,
+        "rel_mse": 1.0,
+        "mean_output": 0.0,
+        "nonzero_fraction": 0.0
+      },
+      {
+        "uint_value": 1,
+        "rel_mse": 1.0,
+        "mean_output": 0.0,
+        "nonzero_fraction": 0.0
+      },
+      {
+        "uint_value": 2,
+        "rel_mse": 3.6992337703704834,
+        "mean_output": 0.005021344870328903,
+        "nonzero_fraction": 0.875
+      },
+      {
+        "uint_value": 3,
+        "rel_mse": 4.702236652374268,
+        "mean_output": 0.02949673682451248,
+        "nonzero_fraction": 0.9375
+      },
+      {
+        "uint_value": 4,
+        "rel_mse": 8.448151588439941,
+        "mean_output": -0.05212482810020447,
+        "nonzero_fraction": 1.0
+      },
+      {
+        "uint_value": 5,
+        "rel_mse": 10.699851989746094,
+        "mean_output": 0.02995789796113968,
+        "nonzero_fraction": 0.9375
+      }
+    ],
+    "-1.0": [
+      {
+        "uint_value": 0,
+        "rel_mse": 0.0,
+        "mean_output": 0.0,
+        "nonzero_fraction": 0.0
+      },
+      {
+        "uint_value": 1,
+        "rel_mse": 0.0,
+        "mean_output": 0.0,
+        "nonzero_fraction": 0.0
+      },
+      {
+        "uint_value": 2,
+        "rel_mse": 41268613120.0,
+        "mean_output": 0.005021344870328903,
+        "nonzero_fraction": 0.875
+      },
+      {
+        "uint_value": 3,
+        "rel_mse": 59272839168.0,
+        "mean_output": 0.02949673682451248,
+        "nonzero_fraction": 0.9375
+      },
+      {
+        "uint_value": 4,
+        "rel_mse": 145096835072.0,
+        "mean_output": -0.05212482810020447,
+        "nonzero_fraction": 1.0
+      },
+      {
+        "uint_value": 5,
+        "rel_mse": 163058810880.0,
+        "mean_output": 0.02995789796113968,
+        "nonzero_fraction": 0.9375
+      }
+    ],
+    "-0.5": [
+      {
+        "uint_value": 0,
+        "rel_mse": 0.0,
+        "mean_output": 0.0,
+        "nonzero_fraction": 0.0
+      },
+      {
+        "uint_value": 1,
+        "rel_mse": 0.0,
+        "mean_output": 0.0,
+        "nonzero_fraction": 0.0
+      },
+      {
+        "uint_value": 2,
+        "rel_mse": 41268613120.0,
+        "mean_output": 0.005021344870328903,
+        "nonzero_fraction": 0.875
+      },
+      {
+        "uint_value": 3,
+        "rel_mse": 59272839168.0,
+        "mean_output": 0.02949673682451248,
+        "nonzero_fraction": 0.9375
+      },
+      {
+        "uint_value": 4,
+        "rel_mse": 145096835072.0,
+        "mean_output": -0.05212482810020447,
+        "nonzero_fraction": 1.0
+      },
+      {
+        "uint_value": 5,
+        "rel_mse": 163058810880.0,
+        "mean_output": 0.02995789796113968,
+        "nonzero_fraction": 0.9375
+      }
+    ],
+    "0.0": [
+      {
+        "uint_value": 0,
+        "rel_mse": 0.0,
+        "mean_output": 0.0,
+        "nonzero_fraction": 0.0
+      },
+      {
+        "uint_value": 1,
+        "rel_mse": 0.0,
+        "mean_output": 0.0,
+        "nonzero_fraction": 0.0
+      },
+      {
+        "uint_value": 2,
+        "rel_mse": 41268613120.0,
+        "mean_output": 0.005021344870328903,
+        "nonzero_fraction": 0.875
+      },
+      {
+        "uint_value": 3,
+        "rel_mse": 59272839168.0,
+        "mean_output": 0.02949673682451248,
+        "nonzero_fraction": 0.9375
+      },
+      {
+        "uint_value": 4,
+        "rel_mse": 145096835072.0,
+        "mean_output": -0.05212482810020447,
+        "nonzero_fraction": 1.0
+      },
+      {
+        "uint_value": 5,
+        "rel_mse": 163058810880.0,
+        "mean_output": 0.02995789796113968,
+        "nonzero_fraction": 0.9375
+      }
+    ],
+    "0.5": [
+      {
+        "uint_value": 0,
+        "rel_mse": 0.0,
+        "mean_output": 0.0,
+        "nonzero_fraction": 0.0
+      },
+      {
+        "uint_value": 1,
+        "rel_mse": 0.0,
+        "mean_output": 0.0,
+        "nonzero_fraction": 0.0
+      },
+      {
+        "uint_value": 2,
+        "rel_mse": 41268613120.0,
+        "mean_output": 0.005021344870328903,
+        "nonzero_fraction": 0.875
+      },
+      {
+        "uint_value": 3,
+        "rel_mse": 59272839168.0,
+        "mean_output": 0.02949673682451248,
+        "nonzero_fraction": 0.9375
+      },
+      {
+        "uint_value": 4,
+        "rel_mse": 145096835072.0,
+        "mean_output": -0.05212482810020447,
+        "nonzero_fraction": 1.0
+      },
+      {
+        "uint_value": 5,
+        "rel_mse": 163058810880.0,
+        "mean_output": 0.02995789796113968,
+        "nonzero_fraction": 0.9375
+      }
+    ],
+    "1.0": [
+      {
+        "uint_value": 0,
+        "rel_mse": 0.0,
+        "mean_output": 0.0,
+        "nonzero_fraction": 0.0
+      },
+      {
+        "uint_value": 1,
+        "rel_mse": 0.0,
+        "mean_output": 0.0,
+        "nonzero_fraction": 0.0
+      },
+      {
+        "uint_value": 2,
+        "rel_mse": 41268613120.0,
+        "mean_output": 0.005021344870328903,
+        "nonzero_fraction": 0.875
+      },
+      {
+        "uint_value": 3,
+        "rel_mse": 59272839168.0,
+        "mean_output": 0.02949673682451248,
+        "nonzero_fraction": 0.9375
+      },
+      {
+        "uint_value": 4,
+        "rel_mse": 145096835072.0,
+        "mean_output": -0.05212482810020447,
+        "nonzero_fraction": 1.0
+      },
+      {
+        "uint_value": 5,
+        "rel_mse": 163058810880.0,
+        "mean_output": 0.02995789796113968,
+        "nonzero_fraction": 0.9375
+      }
+    ],
+    "2.0": [
+      {
+        "uint_value": 2,
+        "rel_mse": 6.4155812789839974e-15,
+        "mean_output": 0.005021344870328903,
+        "nonzero_fraction": 0.875
+      },
+      {
+        "uint_value": 3,
+        "rel_mse": 0.38207557797431946,
+        "mean_output": 0.02949673682451248,
+        "nonzero_fraction": 0.9375
+      },
+      {
+        "uint_value": 0,
+        "rel_mse": 1.0,
+        "mean_output": 0.0,
+        "nonzero_fraction": 0.0
+      },
+      {
+        "uint_value": 1,
+        "rel_mse": 1.0,
+        "mean_output": 0.0,
+        "nonzero_fraction": 0.0
+      },
+      {
+        "uint_value": 4,
+        "rel_mse": 1.8307899236679077,
+        "mean_output": -0.05212482810020447,
+        "nonzero_fraction": 1.0
+      },
+      {
+        "uint_value": 5,
+        "rel_mse": 2.1563327312469482,
+        "mean_output": 0.02995789796113968,
+        "nonzero_fraction": 0.9375
+      }
+    ],
+    "4.0": [
+      {
+        "uint_value": 4,
+        "rel_mse": 9.187898516007167e-15,
+        "mean_output": -0.05212482810020447,
+        "nonzero_fraction": 1.0
+      },
+      {
+        "uint_value": 5,
+        "rel_mse": 0.21041224896907806,
+        "mean_output": 0.02995789796113968,
+        "nonzero_fraction": 0.9375
+      },
+      {
+        "uint_value": 6,
+        "rel_mse": 0.3077985644340515,
+        "mean_output": -0.07001912593841553,
+        "nonzero_fraction": 1.0
+      },
+      {
+        "uint_value": 3,
+        "rel_mse": 0.31131061911582947,
+        "mean_output": 0.02949673682451248,
+        "nonzero_fraction": 0.9375
+      },
+      {
+        "uint_value": 2,
+        "rel_mse": 0.5207154154777527,
+        "mean_output": 0.005021344870328903,
+        "nonzero_fraction": 0.875
+      },
+      {
+        "uint_value": 7,
+        "rel_mse": 0.6519662141799927,
+        "mean_output": 0.04597243666648865,
+        "nonzero_fraction": 1.0
+      }
+    ],
+    "8.0": [
+      {
+        "uint_value": 8,
+        "rel_mse": 1.0531337663098692e-14,
+        "mean_output": 0.033945828676223755,
+        "nonzero_fraction": 1.0
+      },
+      {
+        "uint_value": 7,
+        "rel_mse": 0.036777134984731674,
+        "mean_output": 0.04597243666648865,
+        "nonzero_fraction": 1.0
+      },
+      {
+        "uint_value": 9,
+        "rel_mse": 0.17796486616134644,
+        "mean_output": 0.020356163382530212,
+        "nonzero_fraction": 1.0
+      },
+      {
+        "uint_value": 5,
+        "rel_mse": 0.17975261807441711,
+        "mean_output": 0.02995789796113968,
+        "nonzero_fraction": 0.9375
+      },
+      {
+        "uint_value": 10,
+        "rel_mse": 0.19140687584877014,
+        "mean_output": 0.005538970232009888,
+        "nonzero_fraction": 1.0
+      },
+      {
+        "uint_value": 6,
+        "rel_mse": 0.19144394993782043,
+        "mean_output": -0.07001912593841553,
+        "nonzero_fraction": 1.0
+      }
+    ]
+  }
+}

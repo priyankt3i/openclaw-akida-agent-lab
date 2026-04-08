@@ -1,0 +1,39 @@
+{
+  "sequence": [
+    -5.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "kernel": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "quantized_layers": [
+    "InputLayer",
+    "InputQuantizer",
+    "QuantizedDepthwiseBufferTempConv",
+    "Dequantizer"
+  ],
+  "float_output": [
+    -5.0,
+    -5.0,
+    -5.0,
+    0.0
+  ],
+  "quantized_output": [
+    -4.0,
+    -4.0,
+    -4.0,
+    0.0
+  ],
+  "akida_output": [
+    -0.15625,
+    -0.15625,
+    -0.15625,
+    0.0
+  ],
+  "all_akida_outputs_negative_during_impulse_tail": true,
+  "akida_clears_to_zero_after_fifo_flush": true
+}
