@@ -1,0 +1,51 @@
+{
+  "seed": 4,
+  "shape_contract": "QuantizedDepthwiseBufferTempConv expects streamed 4D samples [B,H,W,C]; FIFO is internal and expanded to [B,H,W,T,C] inside the layer.",
+  "kernel_size": 4,
+  "sequence": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "kernel": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "quantized_layers": [
+    "InputLayer",
+    "InputQuantizer",
+    "QuantizedDepthwiseBufferTempConv",
+    "Dequantizer"
+  ],
+  "akida_layers": [
+    "Layer",
+    "Layer",
+    "Layer",
+    "Layer"
+  ],
+  "float_output": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.0
+  ],
+  "quantized_output": [
+    0.9921875,
+    0.9921875,
+    0.9921875,
+    0.9921875,
+    0.0
+  ],
+  "akida_output": [
+    0.0078125,
+    0.0078125,
+    0.0078125,
+    0.0078125,
+    0.0
+  ]
+}

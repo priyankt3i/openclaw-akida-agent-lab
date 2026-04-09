@@ -1,0 +1,42 @@
+{
+  "seed": 22,
+  "kernel_size": 2,
+  "input_contract": "4D streamed frame input (B,H,W,C)",
+  "layers": [
+    "InputQuantizer",
+    "QuantizedDepthwiseBufferTempConv",
+    "QuantizedReLU"
+  ],
+  "layer_names": [
+    "input_quantizer",
+    "qdw_btc2",
+    "qrelu6"
+  ],
+  "sample_shape": [
+    1,
+    1,
+    1,
+    4
+  ],
+  "quantized_call": {
+    "status": "ok",
+    "output_type": "FixedPoint",
+    "output_shape": [
+      1,
+      1,
+      1,
+      4
+    ],
+    "values_shape": [
+      1,
+      1,
+      1,
+      4
+    ]
+  },
+  "convert": {
+    "status": "error",
+    "error_type": "RuntimeError",
+    "message": "Invalid block found during conversion:\n QuantizedReLU (qrelu6)\nCompatible patterns that contain the faulty layers are:\n - QuantizedDense > QuantizedReLU\n - QuantizedFlatten > QuantizedDense > QuantizedReLU\n - QuantizedReshape > QuantizedDense > QuantizedReLU\n - QuantizedReshape > QuantizedFlatten > QuantizedDense > QuantizedReLU\n - QuantizedConv2D > QuantizedReLU\n - QuantizedConv2D > QuantizedMaxPool2D > QuantizedReLU\n - QuantizedConv2D > QuantizedReLU > QuantizedGlobalAveragePooling2D\n - QuantizedConv2DTranspose > QuantizedReLU\n - QuantizedDepthwiseConv2D > QuantizedReLU\n - QuantizedDepthwiseConv2D > QuantizedMaxPool2D > QuantizedReLU\n - QuantizedDepthwiseConv2DTranspose > QuantizedReLU\n - QuantizedBufferTempConv > QuantizedReLU\n - QuantizedDepthwiseBufferTempConv > QuantizedReLU\n - QuantizedStatefulProjection > QuantizedStatefulRecurrent > QuantizedExtractToken > QuantizedStatefulProjection > QuantizedReLU\n"
+  }
+}

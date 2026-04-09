@@ -1,0 +1,55 @@
+{
+  "seed": 16,
+  "probe_type": "4D streaming input, per-frame temporal probe",
+  "calibration_shape": [
+    8,
+    1,
+    1,
+    4
+  ],
+  "model_layers": [
+    "DepthwiseBufferTempConv",
+    "ReLU"
+  ],
+  "kernel_size": 16,
+  "stride": 1,
+  "dilation_rate": 1,
+  "activation_quantization": "per-tensor",
+  "relu_max_value": 6.0,
+  "warmup_output_shape": [
+    1,
+    8,
+    1,
+    1,
+    4
+  ],
+  "warmup_zero_fraction": 0.5,
+  "quantization_params": {
+    "input_weight_bits": 8,
+    "weight_bits": 4,
+    "activation_bits": 4,
+    "per_tensor_activations": true,
+    "input_dtype": "int8",
+    "batch_size": 1,
+    "calibration": "random normal noise"
+  },
+  "quantized_layers": [
+    "InputLayer",
+    "InputQuantizer",
+    "QuantizedDepthwiseBufferTempConv",
+    "QuantizedReLU",
+    "Dequantizer"
+  ],
+  "quantized_layer_names": [
+    "frame",
+    "input_quantizer",
+    "dw_btc16",
+    "relu6",
+    "dequantizer"
+  ],
+  "convert": {
+    "status": "error",
+    "error_type": "ValueError",
+    "message": "Layers 'dw_btc16', 'relu6': unsupported type [QuantizedDepthwiseBufferTempConv, QuantizedReLU]: fifo_size must be between 2 and 10."
+  }
+}

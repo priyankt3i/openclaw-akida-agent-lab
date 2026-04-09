@@ -1,0 +1,315 @@
+{
+  "seed": 23,
+  "fixed_config": {
+    "kernel_size": 4,
+    "tokens": 12,
+    "bottleneck_width": 4,
+    "amplitude": 8.0,
+    "pre_gain": 1.0,
+    "activation_bits": 4,
+    "calibration": "baseline_minmax_scale2",
+    "recovery_stage": "per-block pointwise 1x1 diagonal amplifier, no bias"
+  },
+  "tested_scales": [
+    16.0,
+    18.0,
+    19.0,
+    20.0,
+    20.33,
+    21.0,
+    22.0,
+    24.0
+  ],
+  "best_single_block": {
+    "blocks": 1,
+    "recovery_scale": 21.0,
+    "metrics": {
+      "rel_mse_quant_vs_akida": 0.9040579199790955,
+      "signed_impulse_fidelity_quant_vs_akida": 0.04918032884597778,
+      "akida_nonzero_fraction": 0.125,
+      "q_nonzero_fraction": 0.125,
+      "akida_abs_sum": 24.359607696533203,
+      "q_abs_sum": 495.31195068359375,
+      "compression_ratio_abs_sum": 0.04918033629655838,
+      "all_zero_akida": false
+    },
+    "vs_raw_single": {
+      "rel_mse_delta": -9.5367431640625e-07,
+      "signed_impulse_fidelity_delta": 1.3935292572653246e-08,
+      "akida_nonzero_fraction_delta": 0.0,
+      "compression_ratio_delta": 2.163000714650032e-08
+    }
+  },
+  "best_double_block": {
+    "blocks": 2,
+    "recovery_scale": 16.0,
+    "metrics": {
+      "rel_mse_quant_vs_akida": 0.8975595831871033,
+      "signed_impulse_fidelity_quant_vs_akida": 0.057598043233156204,
+      "akida_nonzero_fraction": 0.25,
+      "q_nonzero_fraction": 0.25,
+      "akida_abs_sum": 1000.93115234375,
+      "q_abs_sum": 18016.76171875,
+      "compression_ratio_abs_sum": 0.0555555522441864,
+      "all_zero_akida": false
+    },
+    "vs_raw_double": {
+      "rel_mse_delta": 0.015096902847290039,
+      "signed_impulse_fidelity_delta": -0.1924019567668438,
+      "akida_nonzero_fraction_delta": 0.1875,
+      "compression_ratio_delta": 0.011437900870395423
+    }
+  },
+  "stack_friendliness_proxy": {
+    "raw_double_minus_raw_single_rel_mse": -0.021596193313598633,
+    "recovered_double_minus_recovered_single_rel_mse": -0.0064983367919921875,
+    "raw_double_over_raw_single_rel_mse_ratio": 0.9761119613512538,
+    "recovered_double_over_recovered_single_rel_mse_ratio": 0.992812034882527,
+    "supports_stack_friendlier_claim": false
+  },
+  "supports_recovery_stage_hypothesis": false,
+  "raw_single_baseline": {
+    "source": "prototype-1/artifacts/kernel4_single_block_calibration_check/summary.json baseline_minmax_scale2",
+    "rel_mse_quant_vs_akida": 0.9040588736534119,
+    "signed_impulse_fidelity_quant_vs_akida": 0.04918031491068521,
+    "akida_nonzero_fraction": 0.125,
+    "compression_ratio_abs_sum": 0.049180314666551234,
+    "scalar_align_scale": 20.33333396911621
+  },
+  "raw_double_baseline": {
+    "source": "prototype-1/artifacts/kernel4_double_stack_fidelity_sweep/summary.json best_double_stack",
+    "rel_mse_quant_vs_akida": 0.8824626803398132,
+    "signed_impulse_fidelity_quant_vs_akida": 0.25,
+    "akida_nonzero_fraction": 0.0625,
+    "compression_ratio_abs_sum": 0.04411765137379098,
+    "scalar_align_scale": 10.999999046325684
+  },
+  "single_records": [
+    {
+      "blocks": 1,
+      "recovery_scale": 16.0,
+      "metrics": {
+        "rel_mse_quant_vs_akida": 0.9040580987930298,
+        "signed_impulse_fidelity_quant_vs_akida": 0.04918032884597778,
+        "akida_nonzero_fraction": 0.125,
+        "q_nonzero_fraction": 0.125,
+        "akida_abs_sum": 18.55970001220703,
+        "q_abs_sum": 377.38055419921875,
+        "compression_ratio_abs_sum": 0.04918032884597778,
+        "all_zero_akida": false
+      }
+    },
+    {
+      "blocks": 1,
+      "recovery_scale": 18.0,
+      "metrics": {
+        "rel_mse_quant_vs_akida": 0.9040581583976746,
+        "signed_impulse_fidelity_quant_vs_akida": 0.04918031767010689,
+        "akida_nonzero_fraction": 0.125,
+        "q_nonzero_fraction": 0.125,
+        "akida_abs_sum": 20.879661560058594,
+        "q_abs_sum": 424.55316162109375,
+        "compression_ratio_abs_sum": 0.049180321395397186,
+        "all_zero_akida": false
+      }
+    },
+    {
+      "blocks": 1,
+      "recovery_scale": 19.0,
+      "metrics": {
+        "rel_mse_quant_vs_akida": 0.9040580987930298,
+        "signed_impulse_fidelity_quant_vs_akida": 0.04918031767010689,
+        "akida_nonzero_fraction": 0.125,
+        "q_nonzero_fraction": 0.125,
+        "akida_abs_sum": 22.039642333984375,
+        "q_abs_sum": 448.139404296875,
+        "compression_ratio_abs_sum": 0.049180325120687485,
+        "all_zero_akida": false
+      }
+    },
+    {
+      "blocks": 1,
+      "recovery_scale": 20.0,
+      "metrics": {
+        "rel_mse_quant_vs_akida": 0.9040579795837402,
+        "signed_impulse_fidelity_quant_vs_akida": 0.04918032884597778,
+        "akida_nonzero_fraction": 0.125,
+        "q_nonzero_fraction": 0.125,
+        "akida_abs_sum": 23.199626922607422,
+        "q_abs_sum": 471.7257080078125,
+        "compression_ratio_abs_sum": 0.04918033257126808,
+        "all_zero_akida": false
+      }
+    },
+    {
+      "blocks": 1,
+      "recovery_scale": 20.33,
+      "metrics": {
+        "rel_mse_quant_vs_akida": 0.9040579795837402,
+        "signed_impulse_fidelity_quant_vs_akida": 0.04918032884597778,
+        "akida_nonzero_fraction": 0.125,
+        "q_nonzero_fraction": 0.125,
+        "akida_abs_sum": 23.582420349121094,
+        "q_abs_sum": 479.5091857910156,
+        "compression_ratio_abs_sum": 0.04918033257126808,
+        "all_zero_akida": false
+      }
+    },
+    {
+      "blocks": 1,
+      "recovery_scale": 21.0,
+      "metrics": {
+        "rel_mse_quant_vs_akida": 0.9040579199790955,
+        "signed_impulse_fidelity_quant_vs_akida": 0.04918032884597778,
+        "akida_nonzero_fraction": 0.125,
+        "q_nonzero_fraction": 0.125,
+        "akida_abs_sum": 24.359607696533203,
+        "q_abs_sum": 495.31195068359375,
+        "compression_ratio_abs_sum": 0.04918033629655838,
+        "all_zero_akida": false
+      }
+    },
+    {
+      "blocks": 1,
+      "recovery_scale": 22.0,
+      "metrics": {
+        "rel_mse_quant_vs_akida": 0.9040579795837402,
+        "signed_impulse_fidelity_quant_vs_akida": 0.049180325120687485,
+        "akida_nonzero_fraction": 0.125,
+        "q_nonzero_fraction": 0.125,
+        "akida_abs_sum": 25.519588470458984,
+        "q_abs_sum": 518.8983154296875,
+        "compression_ratio_abs_sum": 0.049180325120687485,
+        "all_zero_akida": false
+      }
+    },
+    {
+      "blocks": 1,
+      "recovery_scale": 24.0,
+      "metrics": {
+        "rel_mse_quant_vs_akida": 0.904058039188385,
+        "signed_impulse_fidelity_quant_vs_akida": 0.049180325120687485,
+        "akida_nonzero_fraction": 0.125,
+        "q_nonzero_fraction": 0.125,
+        "akida_abs_sum": 27.839553833007812,
+        "q_abs_sum": 566.0708618164062,
+        "compression_ratio_abs_sum": 0.04918033257126808,
+        "all_zero_akida": false
+      }
+    }
+  ],
+  "double_records": [
+    {
+      "blocks": 2,
+      "recovery_scale": 16.0,
+      "metrics": {
+        "rel_mse_quant_vs_akida": 0.8975595831871033,
+        "signed_impulse_fidelity_quant_vs_akida": 0.057598043233156204,
+        "akida_nonzero_fraction": 0.25,
+        "q_nonzero_fraction": 0.25,
+        "akida_abs_sum": 1000.93115234375,
+        "q_abs_sum": 18016.76171875,
+        "compression_ratio_abs_sum": 0.0555555522441864,
+        "all_zero_akida": false
+      }
+    },
+    {
+      "blocks": 2,
+      "recovery_scale": 18.0,
+      "metrics": {
+        "rel_mse_quant_vs_akida": 0.897559642791748,
+        "signed_impulse_fidelity_quant_vs_akida": 0.057598043233156204,
+        "akida_nonzero_fraction": 0.25,
+        "q_nonzero_fraction": 0.25,
+        "akida_abs_sum": 1266.8035888671875,
+        "q_abs_sum": 22802.46484375,
+        "compression_ratio_abs_sum": 0.0555555559694767,
+        "all_zero_akida": false
+      }
+    },
+    {
+      "blocks": 2,
+      "recovery_scale": 19.0,
+      "metrics": {
+        "rel_mse_quant_vs_akida": 0.897559642791748,
+        "signed_impulse_fidelity_quant_vs_akida": 0.057598043233156204,
+        "akida_nonzero_fraction": 0.25,
+        "q_nonzero_fraction": 0.25,
+        "akida_abs_sum": 1411.469482421875,
+        "q_abs_sum": 25406.44921875,
+        "compression_ratio_abs_sum": 0.055555559694767,
+        "all_zero_akida": false
+      }
+    },
+    {
+      "blocks": 2,
+      "recovery_scale": 20.0,
+      "metrics": {
+        "rel_mse_quant_vs_akida": 0.8975595831871033,
+        "signed_impulse_fidelity_quant_vs_akida": 0.057598043233156204,
+        "akida_nonzero_fraction": 0.25,
+        "q_nonzero_fraction": 0.25,
+        "akida_abs_sum": 1563.954833984375,
+        "q_abs_sum": 28151.1875,
+        "compression_ratio_abs_sum": 0.0555555559694767,
+        "all_zero_akida": false
+      }
+    },
+    {
+      "blocks": 2,
+      "recovery_scale": 20.33,
+      "metrics": {
+        "rel_mse_quant_vs_akida": 0.8975595831871033,
+        "signed_impulse_fidelity_quant_vs_akida": 0.05759803578257561,
+        "akida_nonzero_fraction": 0.25,
+        "q_nonzero_fraction": 0.25,
+        "akida_abs_sum": 1615.9912109375,
+        "q_abs_sum": 29087.83984375,
+        "compression_ratio_abs_sum": 0.055555559694767,
+        "all_zero_akida": false
+      }
+    },
+    {
+      "blocks": 2,
+      "recovery_scale": 21.0,
+      "metrics": {
+        "rel_mse_quant_vs_akida": 0.8975595831871033,
+        "signed_impulse_fidelity_quant_vs_akida": 0.057598043233156204,
+        "akida_nonzero_fraction": 0.25,
+        "q_nonzero_fraction": 0.25,
+        "akida_abs_sum": 1724.26025390625,
+        "q_abs_sum": 31036.6875,
+        "compression_ratio_abs_sum": 0.0555555485188961,
+        "all_zero_akida": false
+      }
+    },
+    {
+      "blocks": 2,
+      "recovery_scale": 22.0,
+      "metrics": {
+        "rel_mse_quant_vs_akida": 0.897559642791748,
+        "signed_impulse_fidelity_quant_vs_akida": 0.057598043233156204,
+        "akida_nonzero_fraction": 0.25,
+        "q_nonzero_fraction": 0.25,
+        "akida_abs_sum": 1892.385498046875,
+        "q_abs_sum": 34062.9375,
+        "compression_ratio_abs_sum": 0.055555559694767,
+        "all_zero_akida": false
+      }
+    },
+    {
+      "blocks": 2,
+      "recovery_scale": 24.0,
+      "metrics": {
+        "rel_mse_quant_vs_akida": 0.8975597023963928,
+        "signed_impulse_fidelity_quant_vs_akida": 0.05759803578257561,
+        "akida_nonzero_fraction": 0.25,
+        "q_nonzero_fraction": 0.25,
+        "akida_abs_sum": 2252.09521484375,
+        "q_abs_sum": 40537.71484375,
+        "compression_ratio_abs_sum": 0.0555555559694767,
+        "all_zero_akida": false
+      }
+    }
+  ]
+}

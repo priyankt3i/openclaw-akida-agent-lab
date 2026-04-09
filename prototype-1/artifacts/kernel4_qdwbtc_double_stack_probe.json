@@ -1,0 +1,160 @@
+{
+  "seed": 11,
+  "shape_contract": "Streamed 4D samples [B,H,W,C] with internal FIFO in each QuantizedDepthwiseBufferTempConv.",
+  "architecture": {
+    "external_width": 16,
+    "bottleneck_width": 8,
+    "kernel_size": 4,
+    "blocks": 2,
+    "pattern": [
+      "Conv2D(1x1,16->8)",
+      "DepthwiseBufferTempConv(k=4)",
+      "Conv2D(1x1,8->16)",
+      "Conv2D(1x1,16->8)",
+      "DepthwiseBufferTempConv(k=4)",
+      "Conv2D(1x1,8->16)"
+    ]
+  },
+  "sequence_shape": [
+    6,
+    16
+  ],
+  "quantized_layers": [
+    "InputLayer",
+    "InputQuantizer",
+    "QuantizedConv2D",
+    "QuantizedDepthwiseBufferTempConv",
+    "QuantizedConv2D",
+    "QuantizedConv2D",
+    "QuantizedDepthwiseBufferTempConv",
+    "QuantizedConv2D",
+    "Dequantizer"
+  ],
+  "quantized_layer_names": [
+    "frame",
+    "input_quantizer",
+    "proj_in_1",
+    "dw_btc4_1",
+    "proj_out_1",
+    "proj_in_2",
+    "dw_btc4_2",
+    "proj_out_2",
+    "dequantizer"
+  ],
+  "akida_layers": [
+    "Layer",
+    "Layer",
+    "Layer",
+    "Layer",
+    "Layer",
+    "Layer",
+    "Layer",
+    "Layer",
+    "Layer"
+  ],
+  "akida_layer_names": [
+    "input_quantizer",
+    "InputData_2",
+    "proj_in_1",
+    "dw_btc4_1",
+    "proj_out_1",
+    "proj_in_2",
+    "dw_btc4_2",
+    "proj_out_2",
+    "dequantizer"
+  ],
+  "akida_temporal_hits": [
+    "dw_btc4_1:Layer",
+    "dw_btc4_2:Layer"
+  ],
+  "akida_layer_reprs": [
+    "<akida.Layer, type=LayerType.Quantizer, name=input_quantizer, input_dims=[1, 1, 16], output_dims=[1, 1, 16]>",
+    "<akida.Layer, type=LayerType.InputData, name=InputData_2, input_dims=[1, 1, 16], output_dims=[1, 1, 16]>",
+    "<akida.Layer, type=LayerType.Conv2D, name=proj_in_1, input_dims=[1, 1, 16], output_dims=[1, 1, 8]>",
+    "<akida.Layer, type=LayerType.DepthwiseBufferTempConv, name=dw_btc4_1, input_dims=[1, 1, 8], output_dims=[1, 1, 8]>",
+    "<akida.Layer, type=LayerType.Conv2D, name=proj_out_1, input_dims=[1, 1, 8], output_dims=[1, 1, 16]>",
+    "<akida.Layer, type=LayerType.Conv2D, name=proj_in_2, input_dims=[1, 1, 16], output_dims=[1, 1, 8]>",
+    "<akida.Layer, type=LayerType.DepthwiseBufferTempConv, name=dw_btc4_2, input_dims=[1, 1, 8], output_dims=[1, 1, 8]>",
+    "<akida.Layer, type=LayerType.Conv2D, name=proj_out_2, input_dims=[1, 1, 8], output_dims=[1, 1, 16]>",
+    "<akida.Layer, type=LayerType.Dequantizer, name=dequantizer, input_dims=[1, 1, 16], output_dims=[1, 1, 16]>"
+  ],
+  "float_output_last_frame": [
+    -1.0,
+    -1.0,
+    -1.0,
+    -1.0,
+    -1.0,
+    -1.0,
+    -1.0,
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "quantized_output_last_frame": [
+    -0.9849655628204346,
+    -0.9849655628204346,
+    -0.9849655628204346,
+    -0.9849655628204346,
+    -0.9849655628204346,
+    -0.9849655628204346,
+    -0.9849655628204346,
+    -0.9849655628204346,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "akida_output_last_frame": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "float_output_sum_per_frame": [
+    8.0,
+    8.0,
+    8.0,
+    8.0,
+    -8.0,
+    -8.0
+  ],
+  "quantized_output_sum_per_frame": [
+    7.879724502563477,
+    7.879724502563477,
+    7.879724502563477,
+    7.879724502563477,
+    -7.879724502563477,
+    -7.879724502563477
+  ],
+  "akida_output_sum_per_frame": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "akida_model_summary": "akida.Model, layer_count=9, sequence_count=1, output_shape=[1, 1, 16]"
+}

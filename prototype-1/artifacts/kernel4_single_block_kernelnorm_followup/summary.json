@@ -1,0 +1,216 @@
+{
+  "seed": 23,
+  "kernel_size": 4,
+  "tokens": 12,
+  "fixed_config": {
+    "blocks": 1,
+    "bottleneck_width": 4,
+    "amplitude": 8.0,
+    "pre_gain": 1.0,
+    "activation_bits": 4
+  },
+  "best_previous_single_block_reference": {
+    "source": "prototype-1/artifacts/kernel4_double_stack_fidelity_sweep/summary.json",
+    "config": {
+      "blocks": 1,
+      "bottleneck_width": 4,
+      "amplitude": 8.0,
+      "pre_gain": 1.0,
+      "kernel_name": "baseline_ones_sum4"
+    },
+    "metrics": {
+      "scalar_rel_mse": 0.0042974576354026794,
+      "scalar_signed_impulse_fidelity": 0.6666666865348816,
+      "akida_nonzero_fraction": 0.125,
+      "all_zero_akida": false
+    }
+  },
+  "best_followup": {
+    "kernel_name": "baseline_ones_sum4",
+    "kernel_weights": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "kernel_abs_sum": 4.0,
+    "metrics": {
+      "raw_rel_mse": 0.8430492281913757,
+      "scalar_rel_mse": 0.0042974576354026794,
+      "raw_signed_impulse_fidelity": 0.6666666865348816,
+      "scalar_signed_impulse_fidelity": 0.6666666865348816,
+      "scalar_align_scale": 12.166665077209473,
+      "akida_nonzero_fraction": 0.125,
+      "q_nonzero_fraction": 0.1875,
+      "all_zero_akida": false,
+      "akida_abs_sum": 1.8745390176773071,
+      "q_abs_sum": 23.744157791137695
+    }
+  },
+  "baseline_repeat": {
+    "kernel_name": "baseline_ones_sum4",
+    "kernel_weights": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "kernel_abs_sum": 4.0,
+    "metrics": {
+      "raw_rel_mse": 0.8430492281913757,
+      "scalar_rel_mse": 0.0042974576354026794,
+      "raw_signed_impulse_fidelity": 0.6666666865348816,
+      "scalar_signed_impulse_fidelity": 0.6666666865348816,
+      "scalar_align_scale": 12.166665077209473,
+      "akida_nonzero_fraction": 0.125,
+      "q_nonzero_fraction": 0.1875,
+      "all_zero_akida": false,
+      "akida_abs_sum": 1.8745390176773071,
+      "q_abs_sum": 23.744157791137695
+    }
+  },
+  "normalized_vs_baseline_delta": {
+    "best_followup_minus_baseline_scalar_rel_mse": 0.0,
+    "best_followup_minus_baseline_scalar_signed_impulse_fidelity": 0.0,
+    "best_followup_minus_baseline_nonzero_fraction": 0.0
+  },
+  "normalized_vs_previous_best_delta": {
+    "scalar_rel_mse_delta": 0.0,
+    "scalar_signed_impulse_fidelity_delta": 0.0,
+    "akida_nonzero_fraction_delta": 0.0
+  },
+  "records": [
+    {
+      "kernel_name": "baseline_ones_sum4",
+      "kernel_weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "kernel_abs_sum": 4.0,
+      "metrics": {
+        "raw_rel_mse": 0.8430492281913757,
+        "scalar_rel_mse": 0.0042974576354026794,
+        "raw_signed_impulse_fidelity": 0.6666666865348816,
+        "scalar_signed_impulse_fidelity": 0.6666666865348816,
+        "scalar_align_scale": 12.166665077209473,
+        "akida_nonzero_fraction": 0.125,
+        "q_nonzero_fraction": 0.1875,
+        "all_zero_akida": false,
+        "akida_abs_sum": 1.8745390176773071,
+        "q_abs_sum": 23.744157791137695
+      }
+    },
+    {
+      "kernel_name": "flat_sum1.0",
+      "kernel_weights": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "kernel_abs_sum": 1.0,
+      "metrics": {
+        "raw_rel_mse": 0.8430492281913757,
+        "scalar_rel_mse": 0.0042974576354026794,
+        "raw_signed_impulse_fidelity": 0.6666666865348816,
+        "scalar_signed_impulse_fidelity": 0.6666666865348816,
+        "scalar_align_scale": 12.166665077209473,
+        "akida_nonzero_fraction": 0.125,
+        "q_nonzero_fraction": 0.1875,
+        "all_zero_akida": false,
+        "akida_abs_sum": 0.4686347544193268,
+        "q_abs_sum": 5.936039447784424
+      }
+    },
+    {
+      "kernel_name": "flat_sum1.1",
+      "kernel_weights": [
+        0.275,
+        0.275,
+        0.275,
+        0.275
+      ],
+      "kernel_abs_sum": 1.1,
+      "metrics": {
+        "raw_rel_mse": 0.8430492281913757,
+        "scalar_rel_mse": 0.004297459498047829,
+        "raw_signed_impulse_fidelity": 0.6666666865348816,
+        "scalar_signed_impulse_fidelity": 0.6666666865348816,
+        "scalar_align_scale": 12.166665077209473,
+        "akida_nonzero_fraction": 0.125,
+        "q_nonzero_fraction": 0.1875,
+        "all_zero_akida": false,
+        "akida_abs_sum": 0.5154982209205627,
+        "q_abs_sum": 6.529643535614014
+      }
+    },
+    {
+      "kernel_name": "decay_sum1.0",
+      "kernel_weights": [
+        0.4,
+        0.3,
+        0.2,
+        0.1
+      ],
+      "kernel_abs_sum": 0.9999999999999999,
+      "metrics": {
+        "raw_rel_mse": 0.9044117331504822,
+        "scalar_rel_mse": 0.22654063999652863,
+        "raw_signed_impulse_fidelity": 0.3333333432674408,
+        "scalar_signed_impulse_fidelity": 0.3333333432674408,
+        "scalar_align_scale": 15.666667938232422,
+        "akida_nonzero_fraction": 0.0625,
+        "q_nonzero_fraction": 0.1875,
+        "all_zero_akida": false,
+        "akida_abs_sum": 0.27446529269218445,
+        "q_abs_sum": 7.136097431182861
+      }
+    },
+    {
+      "kernel_name": "decay_sum1.1",
+      "kernel_weights": [
+        0.44,
+        0.33,
+        0.22,
+        0.11
+      ],
+      "kernel_abs_sum": 1.1,
+      "metrics": {
+        "raw_rel_mse": 0.904411792755127,
+        "scalar_rel_mse": 0.22654062509536743,
+        "raw_signed_impulse_fidelity": 0.3333333432674408,
+        "scalar_signed_impulse_fidelity": 0.3333333432674408,
+        "scalar_align_scale": 15.666666984558105,
+        "akida_nonzero_fraction": 0.0625,
+        "q_nonzero_fraction": 0.1875,
+        "all_zero_akida": false,
+        "akida_abs_sum": 0.3019118309020996,
+        "q_abs_sum": 7.849706649780273
+      }
+    },
+    {
+      "kernel_name": "tail_heavy_sum1.0",
+      "kernel_weights": [
+        0.1,
+        0.2,
+        0.3,
+        0.4
+      ],
+      "kernel_abs_sum": 1.0,
+      "metrics": {
+        "raw_rel_mse": 0.9083896279335022,
+        "scalar_rel_mse": 0.22822244465351105,
+        "raw_signed_impulse_fidelity": 0.3333333432674408,
+        "scalar_signed_impulse_fidelity": 0.3333333432674408,
+        "scalar_align_scale": 16.33333396911621,
+        "akida_nonzero_fraction": 0.0625,
+        "q_nonzero_fraction": 0.1875,
+        "all_zero_akida": false,
+        "akida_abs_sum": 0.26687002182006836,
+        "q_abs_sum": 7.383403778076172
+      }
+    }
+  ]
+}

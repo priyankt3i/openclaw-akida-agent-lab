@@ -1,0 +1,17 @@
+{
+  "seed": 10,
+  "kernel_size": 10,
+  "calibration_shape": [
+    8,
+    1,
+    1,
+    1,
+    4
+  ],
+  "patch": "QuantizedDepthwiseBufferTempConv._init_fifo handles FixedPoint tile via values tensor",
+  "quantize_stage": {
+    "status": "error",
+    "error_type": "ValueError",
+    "message": "Exception encountered when calling layer \"qdw_btc10\" (type QuantizedDepthwiseBufferTempConv).\n\nin user code:\n\n    File \"/usr/local/lib/python3.11/site-packages/quantizeml/layers/layers_base.py\", line 222, in check_inputs  *\n        return call(self, inputs)\n    File \"/usr/local/lib/python3.11/site-packages/quantizeml/layers/layers_base.py\", line 181, in decorator  *\n        outputs = call(self, inputs)\n    File \"/usr/local/lib/python3.11/site-packages/quantizeml/layers/buffer_temp_conv.py\", line 304, in call  *\n        self._fifo_op(inputs)\n    File \"/usr/local/lib/python3.11/site-packages/quantizeml/layers/buffer_temp_conv.py\", line 96, in _fifo_op  *\n        self._fifo.set_var(\n    File \"/usr/local/lib/python3.11/site-packages/quantizeml/tensors/tf_dispatch/reshaping.py\", line 168, in fp_concat\n        values_out = tf.concat([values[0].values, values[1].values], axis, name)\n\n    ValueError: Dimension 3 in both shapes must be equal, but are 0 and 1. Shapes are [1,1,1,0] and [1,1,1,1]. for '{{node qdw_btc10/concat}} = ConcatV2[N=2, T=DT_FLOAT, Tidx=DT_INT32](qdw_btc10/IdentityN_4, qdw_btc10/IdentityN_5, qdw_btc10/concat/axis)' with input shapes: [1,1,1,0,10,4], [1,1,1,1,1,4], [] and with computed input tensors: input[2] = <-2>.\n\n\nCall arguments received by layer \"qdw_btc10\" (type QuantizedDepthwiseBufferTempConv):\n  \u2022 inputs=FixedPoint(shape=TensorShape([1, 1, 1, 1, 4]), values=<tf.Tensor 'Placeholder:0' shape=(1, 1, 1, 1, 4) dtype=float32>, value_bits=7, frac_bits=<tf.Tensor 'Placeholder_1:0' shape=() dtype=float32>)"
+  }
+}

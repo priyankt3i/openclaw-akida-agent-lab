@@ -1,0 +1,140 @@
+{
+  "seed": 23,
+  "external_width": 8,
+  "kernel_size": 4,
+  "search_space": {
+    "bottleneck_width": [
+      2,
+      4,
+      8
+    ],
+    "input_amplitude": [
+      4.0,
+      8.0
+    ],
+    "pre_gain": [
+      1.0,
+      2.0
+    ],
+    "post_scale": [
+      1.0
+    ],
+    "calibration_scale": [
+      1.0,
+      2.0
+    ]
+  },
+  "num_trials": 24,
+  "num_successful_trials": 24,
+  "num_nonzero_akida_trials": 24,
+  "best_trial": {
+    "bottleneck_width": 2,
+    "input_amplitude": 8.0,
+    "pre_gain": 2.0,
+    "post_scale": 1.0,
+    "calibration_scale": 2.0,
+    "toolchain_ok": true,
+    "rel_mse_float_vs_akida": 0.9813681840896606,
+    "rel_mse_quant_vs_akida": 0.8820948004722595,
+    "signed_impulse_fidelity_float_vs_akida": 0.007768185343593359,
+    "signed_impulse_fidelity_quant_vs_akida": 0.05166364088654518,
+    "akida_nonzero_fraction": 0.203125,
+    "akida_abs_sum": 2.2621428966522217,
+    "akida_max_abs": 0.22621428966522217,
+    "float_abs_sum": 240.0,
+    "quant_abs_sum": 37.49501037597656,
+    "all_zero_akida": false
+  },
+  "top5_by_rel_mse": [
+    {
+      "bottleneck_width": 2,
+      "input_amplitude": 8.0,
+      "pre_gain": 2.0,
+      "post_scale": 1.0,
+      "calibration_scale": 2.0,
+      "toolchain_ok": true,
+      "rel_mse_float_vs_akida": 0.9813681840896606,
+      "rel_mse_quant_vs_akida": 0.8820948004722595,
+      "signed_impulse_fidelity_float_vs_akida": 0.007768185343593359,
+      "signed_impulse_fidelity_quant_vs_akida": 0.05166364088654518,
+      "akida_nonzero_fraction": 0.203125,
+      "akida_abs_sum": 2.2621428966522217,
+      "akida_max_abs": 0.22621428966522217,
+      "float_abs_sum": 240.0,
+      "quant_abs_sum": 37.49501037597656,
+      "all_zero_akida": false
+    },
+    {
+      "bottleneck_width": 2,
+      "input_amplitude": 4.0,
+      "pre_gain": 1.0,
+      "post_scale": 1.0,
+      "calibration_scale": 1.0,
+      "toolchain_ok": true,
+      "rel_mse_float_vs_akida": 0.9813681840896606,
+      "rel_mse_quant_vs_akida": 0.9404842853546143,
+      "signed_impulse_fidelity_float_vs_akida": 0.007768184412270784,
+      "signed_impulse_fidelity_quant_vs_akida": 0.02225901186466217,
+      "akida_nonzero_fraction": 0.203125,
+      "akida_abs_sum": 0.5655357241630554,
+      "akida_max_abs": 0.05655357241630554,
+      "float_abs_sum": 60.0,
+      "quant_abs_sum": 19.0302734375,
+      "all_zero_akida": false
+    },
+    {
+      "bottleneck_width": 2,
+      "input_amplitude": 4.0,
+      "pre_gain": 2.0,
+      "post_scale": 1.0,
+      "calibration_scale": 1.0,
+      "toolchain_ok": true,
+      "rel_mse_float_vs_akida": 0.9813681840896606,
+      "rel_mse_quant_vs_akida": 0.9186004996299744,
+      "signed_impulse_fidelity_float_vs_akida": 0.007768184412270784,
+      "signed_impulse_fidelity_quant_vs_akida": 0.0318882092833519,
+      "akida_nonzero_fraction": 0.203125,
+      "akida_abs_sum": 1.1310714483261108,
+      "akida_max_abs": 0.11310714483261108,
+      "float_abs_sum": 120.0,
+      "quant_abs_sum": 27.089160919189453,
+      "all_zero_akida": false
+    },
+    {
+      "bottleneck_width": 2,
+      "input_amplitude": 8.0,
+      "pre_gain": 1.0,
+      "post_scale": 1.0,
+      "calibration_scale": 2.0,
+      "toolchain_ok": true,
+      "rel_mse_float_vs_akida": 0.9813681840896606,
+      "rel_mse_quant_vs_akida": 0.8820948004722595,
+      "signed_impulse_fidelity_float_vs_akida": 0.007768184412270784,
+      "signed_impulse_fidelity_quant_vs_akida": 0.05166361480951309,
+      "akida_nonzero_fraction": 0.203125,
+      "akida_abs_sum": 1.1310714483261108,
+      "akida_max_abs": 0.11310714483261108,
+      "float_abs_sum": 120.0,
+      "quant_abs_sum": 18.74750518798828,
+      "all_zero_akida": false
+    },
+    {
+      "bottleneck_width": 4,
+      "input_amplitude": 4.0,
+      "pre_gain": 2.0,
+      "post_scale": 1.0,
+      "calibration_scale": 1.0,
+      "toolchain_ok": true,
+      "rel_mse_float_vs_akida": 0.9829859137535095,
+      "rel_mse_quant_vs_akida": 0.9402199983596802,
+      "signed_impulse_fidelity_float_vs_akida": 0.004779846873134375,
+      "signed_impulse_fidelity_quant_vs_akida": 0.06369028240442276,
+      "akida_nonzero_fraction": 0.296875,
+      "akida_abs_sum": 1.3694223165512085,
+      "akida_max_abs": 0.11277595907449722,
+      "float_abs_sum": 172.0,
+      "quant_abs_sum": 42.45208740234375,
+      "all_zero_akida": false
+    }
+  ]
+}

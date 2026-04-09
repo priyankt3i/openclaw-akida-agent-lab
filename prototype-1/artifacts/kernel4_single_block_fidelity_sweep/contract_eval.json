@@ -1,0 +1,38 @@
+{
+  "contract_version": "2026-04-08-temporal-path-v1",
+  "fifo_depth": 4,
+  "warmup": {
+    "policy": "Zero-prime the FIFO and treat exactly the first fifo_depth - 1 tokens as warmup. Report them, but exclude them from the continuation gate except through warmup_penalty_ratio.",
+    "warmup_token_count": 3,
+    "steady_state_start_token": 3,
+    "transition_end_token_exclusive": 7
+  },
+  "metrics": {
+    "full_sequence_rel_mse": 0.9813681840896606,
+    "warmup_rel_mse": 0.9828950762748718,
+    "transition_rel_mse": 0.9796980023384094,
+    "steady_state_rel_mse": 0.9796198010444641,
+    "steady_state_early_quarter_rel_mse": 0.9817448258399963,
+    "steady_state_late_quarter_rel_mse": 0.9775384664535522,
+    "steady_state_late_to_early_ratio": 0.9957154249498131,
+    "warmup_penalty_ratio": 1.003343414686918,
+    "per_token_rel_mse": [
+      0.9859116077423096,
+      0.9826758503913879,
+      0.9817448258399963,
+      0.9817448258399963,
+      0.9767364263534546,
+      0.9775065779685974,
+      0.9775384664535522,
+      0.9775384664535522
+    ]
+  },
+  "gates": {
+    "toolchain_ok": true,
+    "enough_tokens_for_steady_state": false,
+    "steady_state_rel_mse_le_0p30": false,
+    "late_to_early_ratio_le_1p25": true,
+    "warmup_penalty_ratio_le_1p50": true,
+    "pass": false
+  }
+}

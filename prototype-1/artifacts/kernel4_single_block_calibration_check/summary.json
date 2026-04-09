@@ -1,0 +1,181 @@
+{
+  "seed": 23,
+  "fixed_config": {
+    "kernel_size": 4,
+    "tokens": 12,
+    "bottleneck_width": 4,
+    "amplitude": 8.0,
+    "pre_gain": 1.0,
+    "activation_bits": 4,
+    "kernel_name": "baseline_ones_sum4"
+  },
+  "quantizeml_calibration_note": "Local Keras path exposes min/max observer calibration with EMA. No direct MSE/percentile selector was found, so variants emulate percentile-like behavior by clipping calibration samples and by changing sample distribution / epochs.",
+  "baseline_reference": {
+    "source": "prototype-1/artifacts/kernel4_single_block_kernelnorm_followup/summary.json",
+    "raw_rel_mse": 0.8430492281913757,
+    "scalar_rel_mse": 0.0042974576354026794,
+    "scalar_align_scale": 12.166665077209473,
+    "akida_nonzero_fraction": 0.125
+  },
+  "best_variant": {
+    "name": "baseline_minmax_scale2",
+    "epochs": 1,
+    "num_samples": 13,
+    "sample_abs_max": 16.0,
+    "metrics": {
+      "raw_rel_mse": 0.9040580987930298,
+      "scalar_rel_mse": 1.4713758504777616e-14,
+      "raw_signed_impulse_fidelity": 0.0491802804172039,
+      "scalar_signed_impulse_fidelity": 0.9999988675117493,
+      "scalar_align_scale": 20.333330154418945,
+      "akida_nonzero_fraction": 0.125,
+      "q_nonzero_fraction": 0.125,
+      "akida_abs_sum": 1.1599812507629395,
+      "q_abs_sum": 23.586284637451172,
+      "compression_ratio_abs_sum": 0.04918032884597778,
+      "all_zero_akida": false
+    }
+  },
+  "baseline_variant_repeat": {
+    "name": "baseline_minmax_scale2",
+    "epochs": 1,
+    "num_samples": 13,
+    "sample_abs_max": 16.0,
+    "metrics": {
+      "raw_rel_mse": 0.9040580987930298,
+      "scalar_rel_mse": 1.4713758504777616e-14,
+      "raw_signed_impulse_fidelity": 0.0491802804172039,
+      "scalar_signed_impulse_fidelity": 0.9999988675117493,
+      "scalar_align_scale": 20.333330154418945,
+      "akida_nonzero_fraction": 0.125,
+      "q_nonzero_fraction": 0.125,
+      "akida_abs_sum": 1.1599812507629395,
+      "q_abs_sum": 23.586284637451172,
+      "compression_ratio_abs_sum": 0.04918032884597778,
+      "all_zero_akida": false
+    }
+  },
+  "best_minus_baseline_repeat": {
+    "raw_rel_mse_delta": 0.0,
+    "scalar_rel_mse_delta": 0.0,
+    "scalar_align_scale_delta": 0.0,
+    "akida_nonzero_fraction_delta": 0.0,
+    "compression_ratio_delta": 0.0
+  },
+  "records": [
+    {
+      "name": "baseline_minmax_scale1",
+      "epochs": 1,
+      "num_samples": 13,
+      "sample_abs_max": 8.0,
+      "metrics": {
+        "raw_rel_mse": 0.9421463012695312,
+        "scalar_rel_mse": 0.3478536009788513,
+        "raw_signed_impulse_fidelity": 0.23552696406841278,
+        "scalar_signed_impulse_fidelity": 5.1893792152404785,
+        "scalar_align_scale": 22.03305435180664,
+        "akida_nonzero_fraction": 0.1875,
+        "q_nonzero_fraction": 0.1875,
+        "akida_abs_sum": 0.9988727569580078,
+        "q_abs_sum": 23.972944259643555,
+        "compression_ratio_abs_sum": 0.0416666716337204,
+        "all_zero_akida": false
+      }
+    },
+    {
+      "name": "baseline_minmax_scale2",
+      "epochs": 1,
+      "num_samples": 13,
+      "sample_abs_max": 16.0,
+      "metrics": {
+        "raw_rel_mse": 0.9040580987930298,
+        "scalar_rel_mse": 1.4713758504777616e-14,
+        "raw_signed_impulse_fidelity": 0.0491802804172039,
+        "scalar_signed_impulse_fidelity": 0.9999988675117493,
+        "scalar_align_scale": 20.333330154418945,
+        "akida_nonzero_fraction": 0.125,
+        "q_nonzero_fraction": 0.125,
+        "akida_abs_sum": 1.1599812507629395,
+        "q_abs_sum": 23.586284637451172,
+        "compression_ratio_abs_sum": 0.04918032884597778,
+        "all_zero_akida": false
+      }
+    },
+    {
+      "name": "toy_task_exact",
+      "epochs": 1,
+      "num_samples": 12,
+      "sample_abs_max": 8.0,
+      "metrics": {
+        "raw_rel_mse": 0.914889395236969,
+        "scalar_rel_mse": 0.4399111568927765,
+        "raw_signed_impulse_fidelity": 0.9087051153182983,
+        "scalar_signed_impulse_fidelity": 11.486797332763672,
+        "scalar_align_scale": 12.640844345092773,
+        "akida_nonzero_fraction": 0.1875,
+        "q_nonzero_fraction": 0.1875,
+        "akida_abs_sum": 4.846965789794922,
+        "q_abs_sum": 70.70867919921875,
+        "compression_ratio_abs_sum": 0.06854838877916336,
+        "all_zero_akida": false
+      }
+    },
+    {
+      "name": "percentile_like_clipped_toy",
+      "epochs": 1,
+      "num_samples": 12,
+      "sample_abs_max": 6.0,
+      "metrics": {
+        "raw_rel_mse": 0.8852432370185852,
+        "scalar_rel_mse": 0.336317777633667,
+        "raw_signed_impulse_fidelity": 0.915709912776947,
+        "scalar_signed_impulse_fidelity": 10.1122407913208,
+        "scalar_align_scale": 11.043062210083008,
+        "akida_nonzero_fraction": 0.1875,
+        "q_nonzero_fraction": 0.1875,
+        "akida_abs_sum": 4.737472057342529,
+        "q_abs_sum": 55.809730529785156,
+        "compression_ratio_abs_sum": 0.08488613367080688,
+        "all_zero_akida": false
+      }
+    },
+    {
+      "name": "wide_tail_mix",
+      "epochs": 1,
+      "num_samples": 37,
+      "sample_abs_max": 16.0,
+      "metrics": {
+        "raw_rel_mse": 0.9317867159843445,
+        "scalar_rel_mse": 0.37254902720451355,
+        "raw_signed_impulse_fidelity": 0.03508768975734711,
+        "scalar_signed_impulse_fidelity": 0.6274504065513611,
+        "scalar_align_scale": 17.88235092163086,
+        "akida_nonzero_fraction": 0.1875,
+        "q_nonzero_fraction": 0.125,
+        "akida_abs_sum": 1.1647429466247559,
+        "q_abs_sum": 24.14194107055664,
+        "compression_ratio_abs_sum": 0.048245619982481,
+        "all_zero_akida": false
+      }
+    },
+    {
+      "name": "toy_task_exact_epochs3",
+      "epochs": 3,
+      "num_samples": 36,
+      "sample_abs_max": 8.0,
+      "metrics": {
+        "raw_rel_mse": 0.9284544587135315,
+        "scalar_rel_mse": 0.32875680923461914,
+        "raw_signed_impulse_fidelity": 0.4608771800994873,
+        "scalar_signed_impulse_fidelity": 8.411008834838867,
+        "scalar_align_scale": 18.249998092651367,
+        "akida_nonzero_fraction": 0.1875,
+        "q_nonzero_fraction": 0.1875,
+        "akida_abs_sum": 1.2644606828689575,
+        "q_abs_sum": 24.087974548339844,
+        "compression_ratio_abs_sum": 0.052493441849946976,
+        "all_zero_akida": false
+      }
+    }
+  ]
+}
